@@ -4,10 +4,12 @@ import Doctor from "./components/dashboard/Doctor";
 import Patient from "./components/Dashboard/Patient";
 import MainHeader from "./components/MainHeader";
 import Signup from "./components/pages/SignUp";
+import Join from "./components/pages/Join";
+import SignIn from "./components/pages/SignIn";
 
 export default function App() {
   // const authenticatedUser = "Doctor";
-  const authenticatedUser = "sign-up";
+  const authenticatedUser = "join";
 
   let content;
 
@@ -46,10 +48,24 @@ export default function App() {
         </>
       );
       break;
+    case "sign-in":
+      content = (
+        <>
+          <SignIn />
+        </>
+      );
+      break;
+    case "join":
+      content = (
+        <>
+          <Join />
+        </>
+      );
+      break;
     default:
       content = (
         <>
-          Welcome to Home
+          404 Page
         </>
       );
   }
