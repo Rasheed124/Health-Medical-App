@@ -1,8 +1,7 @@
 import React from "react";
 
-import { FaApple, FaEye } from "react-icons/fa";
+import { FaApple, FaEye, FaGoogle } from "react-icons/fa";
 
-import Google from "../assets/google.svg";
 
 const Signup = () => {
   const countries = [
@@ -198,7 +197,7 @@ const Signup = () => {
   ];
 
   return (
-    <div>
+    <div className="px-6">
       <div className="py-6  px-6 lg:px-10">
         <div className="max-w-3xl lg:max-w-6xl mx-auto">
           <h5 className="font-semibold text-[20px] text-[#0a7dcf]">
@@ -207,7 +206,7 @@ const Signup = () => {
         </div>
       </div>
 
-      <div className="w-[726px] min-h-[600px] shadow-[5px_5px_20px_0_rgba(0,0,0,0.4)] mx-auto rounded-[50px]  flex-col flex mb-[60px] bg-gradient-to-b from-white via-white via-90% to-[#53d2e3]">
+      <div className="p-5 shadow-[5px_5px_20px_0_rgba(0,0,0,0.4)] max-w-2xl mx-auto rounded-[50px]  flex-col flex mb-[60px] bg-gradient-to-b from-white via-white via-90% to-[#53d2e3]">
         <h2 className="text-[2.5rem] mx-auto mt-[20px] mb-[35px] font-semibold tracking-[2px] leading-[1.1] text-[#101010]">
           Sign Up
         </h2>
@@ -217,8 +216,8 @@ const Signup = () => {
             <div className="ml-[5px]">Continue with Apple</div>
           </button>
           <button className="w-full mx-auto text-sm bg-[#0a7dcf] hover:bg-blue-500 flex items-center rounded-full p-2 text-white mb-2">
-            <div className="w-8 h-8 flex items-center jusitfy-center rounded-full bg-white">
-              {/* <img src={Google} alt="google" className="w-6 h-6 mx-auto" /> */}
+            <div className="flex p-2 items-center jusitfy-center rounded-full bg-white">
+              <FaGoogle className="text-red-900 text-center text-xl  " />
             </div>
             <div className="mx-auto">Continue with Google</div>
           </button>
