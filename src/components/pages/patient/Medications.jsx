@@ -1,9 +1,10 @@
 
 import { GrFormView } from "react-icons/gr";
 import { IoCheckmark } from "react-icons/io5";
-import { FaTimes } from "react-icons/fa";
+import { FaCheck, FaEye, FaTimes } from "react-icons/fa";
 import { GiPawHeart } from "react-icons/gi";
 import { RiPrinterFill } from "react-icons/ri";
+import { MdCancel } from "react-icons/md";
 
 
 
@@ -76,24 +77,17 @@ import { RiPrinterFill } from "react-icons/ri";
                   </td>
 
                   <td className="whitespace-nowrap px-4 space-x-2 py-2">
-                    <a
-                      class="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600/70 px-4 py-1 text-xs font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                      href="/download"
-                    >
-                      <span class="text-sm font-medium"> View </span>
-                    </a>
-                    <a
-                      class="inline-flex items-center gap-2 rounded border border-green-600 bg-green-600/70 px-4 py-2 text-xs font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                      href="/download"
-                    >
-                      <IoCheckmark className="text-xl" />
-                    </a>
-                    <a
-                      class="inline-flex items-center gap-2 rounded border border-red-600 bg-red-600/70 px-4 py-2 text-xs font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                      href="/download"
-                    >
-                      <FaTimes className="text-xl" />
-                    </a>
+                    <div className="inline-flex gap-[5px] items-center">
+                      <button className="text-[#1db9aa] flex mb-3 items-center font-medium text-[13px] bg-[#02b6b31f]  rounded-[5px] py-[4px] px-[8px]">
+                        <FaEye /> <span className="ml-[3px]">View</span>
+                      </button>
+                      <button className="text-[#26af48] flex mb-3 items-center font-medium text-[13px] bg-[#0fb76b1f]  rounded-[5px] py-[4px] px-[8px]">
+                        <FaCheck /> <span className="ml-[3px]">Accept</span>
+                      </button>
+                      <button className="text-[#e63c3c] flex mb-3 items-center font-medium text-[13px] bg-[#f211361f]  rounded-[5px] py-[4px] px-[8px]">
+                        <MdCancel /> <span className="ml-[3px]">Cancel</span>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
