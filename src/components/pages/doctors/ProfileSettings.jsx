@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
 import { MdUpload } from "react-icons/md";
-export default function ProfileSetting() {
+
+const ProfileSettings = () => {
   return (
-     <div className=" w-full">
+    <div className=" w-full">
      
       <form action=" " className=" max-w-[500px]">
        <div>
@@ -141,5 +142,7 @@ export default function ProfileSetting() {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
+
+export default ProfileSettings;

@@ -37,7 +37,7 @@ export default function PatientSidebar() {
             <li>
               <Link
                 to="/"
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <BiSolidDashboard className="text-xl" />
 
@@ -46,8 +46,8 @@ export default function PatientSidebar() {
             </li>
             <li>
               <Link
-                to={"/book-an-appointment"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                to={"/appointments"}
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <BsPersonDash className="text-xl" />
 
@@ -57,88 +57,40 @@ export default function PatientSidebar() {
 
             <li>
               <Link
-                to={"/medication"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <LuCalendarDays className="text-xl" />
-
-                <span class="text-sm font-medium"> Medication </span>
-              </Link>
-            </li>
-            <li>
-              <Link
                 to={"/medical-report"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <LuCalendarDays className="text-xl" />
 
                 <span class="text-sm font-medium"> Medical Report </span>
               </Link>
             </li>
-            <li>
-              <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <GoClockFill className="text-xl" />
 
-                <span class="text-sm font-medium"> Available Timings </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <LiaFileInvoiceSolid className="text-xl" />
+            {/* <li>
+            <Link
+              to={"/patient"}
+              class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+            >
+              <TbMessageCircle2Filled className="text-xl" />
 
-                <span class="text-sm font-medium"> Invoices </span>
-              </Link>
-            </li>
+              <span class="text-sm font-medium"> Messages</span>
+            </Link>
+          </li> */}
             <li>
               <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <IoStarOutline className="text-xl" />
-
-                <span class="text-sm font-medium"> Reviews </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <TbMessageCircle2Filled className="text-xl" />
-
-                <span class="text-sm font-medium"> Messages</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                to={"/profile-settings"}
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoPerson className="text-xl" />
 
                 <span class="text-sm font-medium"> Profile Settings</span>
               </Link>
             </li>
-            <li>
-              <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-              >
-                <IoMdShare className="text-xl" />
 
-                <span class="text-sm font-medium"> Social Media</span>
-              </Link>
-            </li>
             <li>
               <Link
-                to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                to={"/change-password"}
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <TbPasswordUser className="text-xl" />
 
@@ -148,7 +100,7 @@ export default function PatientSidebar() {
             <li>
               <Link
                 to={"/patient"}
-               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoIosLogOut className="text-xl" />
 

@@ -8,8 +8,8 @@ import Join from "./components/pages/Join";
 import SignIn from "./components/pages/SignIn";
 
 export default function App() {
-  // const authenticatedUser = "Doctor";
-  const authenticatedUser = "join";
+  const authenticatedUser = "doctor";
+  // const authenticatedUser = "patient";
 
   let content;
 
@@ -63,11 +63,7 @@ export default function App() {
       );
       break;
     default:
-      content = (
-        <>
-          404 Page
-        </>
-      );
+      content = <>404 Page</>;
   }
 
   return <>{content}</>;

@@ -54,7 +54,7 @@ export default function DoctorSidebar() {
               <span class="text-sm font-medium"> Appointemnt </span>
             </Link>
           </li>
-   
+
           <li>
             <Link
               to={"/medical-report"}
@@ -65,37 +65,8 @@ export default function DoctorSidebar() {
               <span class="text-sm font-medium"> Medical Report </span>
             </Link>
           </li>
-          <li>
-            <Link
-              to={"/patient"}
-              class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-            >
-              <GoClockFill className="text-xl" />
 
-              <span class="text-sm font-medium"> Available Timings </span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"/patient"}
-              class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-            >
-              <LiaFileInvoiceSolid className="text-xl" />
-
-              <span class="text-sm font-medium"> Invoices </span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"/patient"}
-              class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-            >
-              <IoStarOutline className="text-xl" />
-
-              <span class="text-sm font-medium"> Reviews </span>
-            </Link>
-          </li>
-          <li>
+          {/* <li>
             <Link
               to={"/patient"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
@@ -104,10 +75,10 @@ export default function DoctorSidebar() {
 
               <span class="text-sm font-medium"> Messages</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
-              to={"/patient"}
+              to={"/profile-settings"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <IoPerson className="text-xl" />
@@ -115,19 +86,10 @@ export default function DoctorSidebar() {
               <span class="text-sm font-medium"> Profile Settings</span>
             </Link>
           </li>
+      
           <li>
             <Link
-              to={"/patient"}
-              class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
-            >
-              <IoMdShare className="text-xl" />
-
-              <span class="text-sm font-medium"> Social Media</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"/patient"}
+              to={"/change-password"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <TbPasswordUser className="text-xl" />
