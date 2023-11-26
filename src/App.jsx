@@ -9,6 +9,12 @@ import PatientDashboard from './pages/PatientDashboard';
 import Home from './pages/Home';
 import MainHeader from './components/MainHeader';
 
+// JUST aDDED
+import PatientAppointment from "./pages/PatientAppointment";
+import SignUp from "./pages/SignUp";
+import MedicalDetails from "./pages/MedicalDetails";
+import DoctorAppointment from "./pages/DoctorAppointment";
+
 
 const MainLayout = () => {
   return (
