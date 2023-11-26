@@ -2,14 +2,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Doctor from "./components/dashboard/Doctor";
 import Patient from "./components/Dashboard/Patient";
-import MainHeader from "./components/MainHeader";
+// import MainHeader from "./components/MainHeader";
 import Signup from "./components/pages/SignUp";
 import Join from "./components/pages/Join";
 import SignIn from "./components/pages/SignIn";
 
 export default function App() {
-  const authenticatedUser = "doctor";
-  // const authenticatedUser = "patient";
+  // const authenticatedUser = "doctor";
+  const authenticatedUser = "patient";
 
   let content;
 
