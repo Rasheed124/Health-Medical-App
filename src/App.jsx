@@ -1,43 +1,39 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Doctor from "./components/dashboard/Doctor";
-import Patient from "./components/Dashboard/Patient";
-// import MainHeader from "./components/MainHeader";
+import Patient from "./components/dashboard/Patient";
 import Signup from "./components/pages/SignUp";
 import Join from "./components/pages/Join";
 import SignIn from "./components/pages/SignIn";
+import HomePage from "./components/pages/HomePage";
 
 export default function App() {
   // const authenticatedUser = "doctor";
-  const authenticatedUser = "patient";
+  const authenticatedUser = "home";
 
   let content;
 
   switch (authenticatedUser) {
-    // case "Home":
-    //       content = (
-    //         <>
-    //           <MainHeader />
-    //           <HomePage />
-    //           <Footer />
-    //         </>
-    //       );
-    //   break;
-    case "doctor":
+    case "home":
       content = (
         <>
           <Header />
-          <Doctor />
+          <HomePage />
           <Footer />
+        </>
+      );
+      break;
+    case "doctor":
+      content = (
+        <>
+          <Doctor />
         </>
       );
       break;
     case "patient":
       content = (
         <>
-          <Header />
           <Patient />
-          <Footer />
         </>
       );
       break;
