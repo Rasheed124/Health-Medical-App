@@ -5,8 +5,8 @@ import Patient from './components/Dashboard/Patient';
         
 export default function App() {
 
-  const authenticatedUser = "Doctor";
-  // const authenticatedUser = "Patient";
+  // const authenticatedUser = "Doctor";
+  const authenticatedUser = "Patient";
     
   if (authenticatedUser === 'Doctor') {
     return (
