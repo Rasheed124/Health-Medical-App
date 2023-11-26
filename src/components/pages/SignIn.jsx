@@ -1,30 +1,35 @@
 import React, { useState } from "react";
+import { auth } from "../../firebase";
 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("patient"); // Default to "patient"
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Your backend API endpoint
-    const apiUrl = "https://your-backend-api.com/SignIn";
-
     try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      // navigate("./doctor");
+      const userToken = user.user.accessToken;
 
-      if (response.ok) {
-        // Handle successful login (e.g., redirect or set authentication state)
-        console.log("Login successful!");
+      console.log(userToken);
+
+      // Save user type and ID to sessionStorage
+      sessionStorage.setItem("userType", userType);
+      // Save the user token to sessionStorage
+      sessionStorage.setItem("userToken", userToken);
+
+      // Navigate to the desired page based on user type
+      if (userType === "doctor") {
+        navigate("/doctor");
       } else {
-        // Handle authentication error
-        console.error("Login failed");
+        navigate("/patient");
       }
     } catch (error) {
       // Handle network error
@@ -51,6 +56,7 @@ const SignIn = () => {
         {/* Add event handlers to update the state based on user input */}
         <input
           type="email"
+          required
           className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
           placeholder="Enter email"
           value={email}
@@ -59,11 +65,26 @@ const SignIn = () => {
 
         <input
           type="password"
+          required
           className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">
+            Select User Type:
+          </label>
+          <select
+            className="w-full mt-1 p-2 border rounded-md"
+            value={userType}
+            onChange={(e) => setUserType(e.target.value)}
+          >
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+          </select>
+        </div>
 
         <div className="flex items-center justify-center">
           <button
