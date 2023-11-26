@@ -36,7 +36,7 @@ export default function DoctorSidebar() {
         <ul className="mt-6 divide-y divide-solid">
           <li>
             <Link
-              to="/"
+              to="/doctor"
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <BiSolidDashboard className="text-xl" />
@@ -46,7 +46,7 @@ export default function DoctorSidebar() {
           </li>
           <li>
             <Link
-              to={"/appointments"}
+              to={"/doctor/appointments"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <BsPersonDash className="text-xl" />
@@ -57,7 +57,7 @@ export default function DoctorSidebar() {
 
           <li>
             <Link
-              to={"/medical-report"}
+              to={"/doctor/medical-report"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <LuCalendarDays className="text-xl" />
@@ -78,7 +78,7 @@ export default function DoctorSidebar() {
           </li> */}
           <li>
             <Link
-              to={"/profile-settings"}
+              to={"/doctor/profile-settings"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <IoPerson className="text-xl" />
@@ -86,10 +86,10 @@ export default function DoctorSidebar() {
               <span class="text-sm font-medium"> Profile Settings</span>
             </Link>
           </li>
-      
+
           <li>
             <Link
-              to={"/change-password"}
+              to={"/doctor/change-password"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <TbPasswordUser className="text-xl" />
@@ -99,7 +99,7 @@ export default function DoctorSidebar() {
           </li>
           <li>
             <Link
-              to={"/patient"}
+              to={"/"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <IoIosLogOut className="text-xl" />

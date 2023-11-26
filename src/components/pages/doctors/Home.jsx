@@ -136,48 +136,6 @@ export default function Home() {
                   </td>
                 </tr>
           
-                <tr>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    <div className="flex">
-                      <img
-                        className="object-cover w-14 h-14 mr-4 rounded-full shadow"
-                        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-                        alt="Person"
-                      />
-                      <div className="flex flex-col items-start justify-center">
-                        <p className="text-lg font-bold">Oliver Aguilerra</p>
-                        <p className="text-sm text-gray-800">Product Manager</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    24/05/1995
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    Web Developer
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    $120,000
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    $120,000
-                  </td>
-                  <td className="whitespace-nowrap px-4 space-x-2 py-2">
-                    <div className="inline-flex gap-[5px] items-center">
-                      <button className="text-[#1db9aa] flex mb-3 items-center font-medium text-[13px] bg-[#02b6b31f]  rounded-[5px] py-[4px] px-[8px]">
-                        <FaEye /> <span className="ml-[3px]">View</span>
-                      </button>
-                      <button className="text-[#26af48] flex mb-3 items-center font-medium text-[13px] bg-[#0fb76b1f]  rounded-[5px] py-[4px] px-[8px]">
-                        <FaCheck /> <span className="ml-[3px]">Accept</span>
-                      </button>
-                      <button className="text-[#e63c3c] flex mb-3 items-center font-medium text-[13px] bg-[#f211361f]  rounded-[5px] py-[4px] px-[8px]">
-                        <MdCancel /> <span className="ml-[3px]">Cancel</span>
-                      </button>
-                    </div>
-                   
-                  </td>
-                </tr>
-          
               </tbody>
             </table>
           </div>

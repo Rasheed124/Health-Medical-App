@@ -6,6 +6,7 @@ import BookAppointment from '../pages/patient/BookAppointment';
 import Medications from '../pages/patient/Medications';
 import MedicalReport from '../pages/patient/MedicalReport';
 import ChangePassword from '../pages/patient/ChangePassword';
+import CreateMedication from '../pages/patient/CreateMedication';
 
 
 
@@ -19,7 +20,10 @@ export default function PatientControl() {
         <Route path="/medication" element={<Medications />} />
         <Route path="/medical-report" element={<MedicalReport />} />
         <Route path="/change-password" element={<ChangePassword />} />
-        {/* <Route path="/Create-medication" element={<CreateMedication />} /> */}
+        <Route
+          path="/create-medication"
+          element={<CreateMedication />}
+        />
       </Routes>
     </>
   );
