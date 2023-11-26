@@ -45,7 +45,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href="/"
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <BiSolidDashboard className="text-xl" />
 
@@ -55,7 +55,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href="appointemnt"
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <BsPersonDash className="text-xl" />
 
@@ -65,7 +65,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href="/patient"
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <BsFillPersonPlusFill className="text-xl" />
 
@@ -75,7 +75,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <LuCalendarDays className="text-xl" />
 
@@ -85,7 +85,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <GoClockFill className="text-xl" />
 
@@ -95,7 +95,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <LiaFileInvoiceSolid className="text-xl" />
 
@@ -105,7 +105,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoStarOutline className="text-xl" />
 
@@ -115,7 +115,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <TbMessageCircle2Filled className="text-xl" />
 
@@ -124,8 +124,8 @@ export default function DoctorSidebar() {
             </li>
             <li>
               <Link
-                href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                to='/Profile-Settings'
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoPerson className="text-xl" />
 
@@ -135,7 +135,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoMdShare className="text-xl" />
 
@@ -144,8 +144,8 @@ export default function DoctorSidebar() {
             </li>
             <li>
               <Link
-                href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                to="/Change-password"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <TbPasswordUser className="text-xl" />
 
@@ -155,7 +155,7 @@ export default function DoctorSidebar() {
             <li>
               <Link
                 href=""
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoIosLogOut className="text-xl" />
 

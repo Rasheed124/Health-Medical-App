@@ -1,6 +1,8 @@
 import React from 'react'
-import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaUser } from "react-icons/fa";
+import { TbPasswordUser } from "react-icons/tb";
+
 
 
 export default function PatientSidebar() {
@@ -50,6 +52,24 @@ export default function PatientSidebar() {
 
                 <span class="text-sm font-medium"> Book an Appointment </span>
                 </Link>
+            </li>
+             <li>
+              <Link
+                to="/Change-password"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+              >
+                <TbPasswordUser className="text-xl" />
+
+                <span class="text-sm font-medium"> Change Password</span>
+              </Link>
+              <Link
+                to="/Create-medication"
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+              >
+                <TbPasswordUser className="text-xl" />
+
+                <span class="text-sm font-medium">Create Medication</span>
+              </Link>
             </li>
             </ul>
         </div>
