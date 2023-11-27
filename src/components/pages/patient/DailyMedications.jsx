@@ -40,23 +40,25 @@ export default function DailyMedications() {
       });
   };
 
-  const handleCheckboxChange = (medicationId) => {
-    setTakenMedications((prevTakenMedications) => ({
-      ...prevTakenMedications,
-      [medicationId]: !prevTakenMedications[medicationId],
-    }));
-
-    // Call a function to send the updated medication data to the endpoint
-    updateMedicationStatus(medicationId);
+const handleCheckboxChange = (medicationId) => {
+  const updatedTakenMedications = {
+    ...takenMedications,
+    [medicationId]: !takenMedications[medicationId],
   };
 
-  const updateMedicationStatus = (medicationId) => {
+  setTakenMedications(updatedTakenMedications);
+
+  // Call a function to send the updated medication data to the endpoint
+  updateMedicationStatus(medicationId, updatedTakenMedications[medicationId]);
+};
+
+  const updateMedicationStatus = (medicationId, taken) => {
     const updatedMedication = medications.medications.find(
       (medication) => medication._id === medicationId,
     );
 
     // Update the 'taken' property based on the checkbox status
-    updatedMedication.taken = takenMedications[medicationId];
+    updatedMedication.taken = taken;
 
     // Send the updated data to the endpoint
     axios

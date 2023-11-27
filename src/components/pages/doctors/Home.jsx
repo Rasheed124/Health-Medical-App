@@ -6,7 +6,7 @@ import { MdCancel } from "react-icons/md";
 export default function Home() {
   return (
     <>
-      <div class="px-4  ">
+      <div class="lg:px-4  ">
         {/* <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-gray-100 border-2">
           <div class="flex flex-col px-4 py-8 text-center"></div>
 
@@ -61,7 +61,9 @@ export default function Home() {
                         alt="Person"
                       />
                       <div className="flex flex-col items-start justify-center">
-                        <p className="text-lg font-bold">Oliver Aguilerra</p>
+                        <p className="text-lg max-[991px]:text-sm max-[991px]:font-semibold font-bold">
+                          Oliver Aguilerra
+                        </p>
                         <p className="text-sm text-gray-800">Product Manager</p>
                       </div>
                     </div>
@@ -90,10 +92,9 @@ export default function Home() {
                         <MdCancel /> <span className="ml-[3px]">Cancel</span>
                       </button>
                     </div>
-                   
                   </td>
                 </tr>
-          
+
                 <tr>
                   <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                     <div className="flex">
@@ -103,7 +104,9 @@ export default function Home() {
                         alt="Person"
                       />
                       <div className="flex flex-col items-start justify-center">
-                        <p className="text-lg font-bold">Oliver Aguilerra</p>
+                        <p className="text-lg max-[991px]:text-sm max-[991px]:font-semibold font-bold">
+                          Oliver Aguilerra
+                        </p>
                         <p className="text-sm text-gray-800">Product Manager</p>
                       </div>
                     </div>
@@ -132,10 +135,8 @@ export default function Home() {
                         <MdCancel /> <span className="ml-[3px]">Cancel</span>
                       </button>
                     </div>
-                   
                   </td>
                 </tr>
-          
               </tbody>
             </table>
           </div>
