@@ -1,6 +1,11 @@
-
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-
+import React, { useEffect } from "react";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,6 +22,36 @@ import HomePage from "./components/HomePage";
 import CreateMedication from "./components/pages/patient/CreateMedication";
 import BookAppointment from "./components/pages/patient/BookAppointment";
 
+const isAuthenticated = () => {
+  // Check if userType exists in session storage
+  const userType = sessionStorage.getItem("userType");
+
+  // Return true if userType exists, indicating the user is authenticated
+  return !!userType;
+};
+
+const PrivateRoute = ({ element, userTypeRequired, ...rest }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuthentication = () => {
+      if (!isAuthenticated()) {
+        // If not authenticated, redirect to the login page ("/sign-in")
+        navigate("/sign-in", { replace: true });
+      } else if (
+        userTypeRequired &&
+        userTypeRequired !== sessionStorage.getItem("userType")
+      ) {
+        // If userTypeRequired is specified and does not match the user's type, redirect to the default page ("/")
+        navigate("/", { replace: true });
+      }
+    };
+
+    checkAuthentication();
+  }, [navigate, userTypeRequired]);
+
+  return React.cloneElement(element, rest);
+};
 
 const MainLayout = () => {
   return (
@@ -49,7 +84,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/doctor",
-    element: <Doctor />,
+    element: (
+      <PrivateRoute
+        redirectTo="/"
+        userTypeRequired="doctor"
+        element={<Doctor />}
+      />
+    ),
     children: [
       {
         path: "appointments",
@@ -59,7 +100,6 @@ const router = createBrowserRouter([
         path: "change-password",
         element: <ChangePassword />,
       },
-
       {
         path: "profile-settings",
         element: <ProfileSettings />,
@@ -72,7 +112,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/patient",
-    element: <Patient />,
+    element: (
+      <PrivateRoute
+        redirectTo="/"
+        userTypeRequired="patient"
+        element={<Patient />}
+      />
+    ),
     children: [
       {
         path: "book-an-appointment",
@@ -82,7 +128,6 @@ const router = createBrowserRouter([
         path: "change-password",
         element: <ChangePassword />,
       },
-
       {
         path: "profile-settings",
         element: <ProfileSettings />,
