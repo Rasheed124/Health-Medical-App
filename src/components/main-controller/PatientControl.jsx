@@ -4,6 +4,7 @@ import Home from '../pages/patient/Home';
 import ProfileSetting from '../pages/patient/ProfileSetting';
 import BookAppointment from '../pages/patient/BookAppointment';
 import Medications from '../pages/patient/Medications';
+import EditMedication from '../pages/patient/EditMedication';
 import MedicalReport from '../pages/patient/MedicalReport';
 import ChangePassword from '../pages/patient/ChangePassword';
 import CreateMedication from '../pages/patient/CreateMedication';
@@ -18,7 +19,8 @@ export default function PatientControl() {
         <Route path="/" element={<Home />} />
         <Route path="/profile-settings" element={<ProfileSetting />} />
         <Route path="/book-an-appointment" element={<BookAppointment />} />
-        <Route path="/medication" element={<Medications />} />
+        <Route path="/medications" element={<Medications />} />
+        <Route path="/medications/:id/edit" element={<EditMedication />} />
         <Route path="/medical-report" element={<MedicalReport />} />
         <Route path="/change-password" element={<ChangePassword />} />
         <Route

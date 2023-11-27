@@ -48,6 +48,8 @@ const CreateMedication = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
 
+      console.log(medicationData);
+
       // Make the POST request with Axios
       axios.post('https://health-connect-cd7q.onrender.com/api/v1/medications', medicationData, {
         headers: {
