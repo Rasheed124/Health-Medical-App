@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditMedication = ({ match }) => {
-  const medicationId = match.params.id;
+const EditMedication = () => {
+  // Access the medicationId from the route parameters
+  const { id: medicationId } = useParams();
 
   const [medicationData, setMedicationData] = useState({
-    name: '',
     description: '',
     note: '',
     startdate: '',
