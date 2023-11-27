@@ -5,11 +5,11 @@ const CreateMedication = () => {
     const [medicationData, setMedicationData] = useState({
       name: '',
       description: '',
+      dosage: '',
       note: '',
       startdate: '',
       enddate: '',
-      timefrequency: [],
-      // assignedto: '',
+      timefrequency: '',
     });
   
     const [patients, setPatients] = useState([]);
@@ -36,37 +36,20 @@ const CreateMedication = () => {
     }, [userToken]);
 
     const handleChange = (e) => {
-      const { name, value, type, checked } = e.target;
-  
-      if (type === 'checkbox') {
-        // If it's a checkbox, update the state array based on its checked status
-        setMedicationData((prevData) => {
-          if (checked) {
-            return {
-              ...prevData,
-              timefrequency: [...prevData.timefrequency, name],
-            };
-          } else {
-            return {
-              ...prevData,
-              timefrequency: prevData.timefrequency.filter((time) => time !== name),
-            };
-          }
-        });
-      } else {
-        // For other input types, update the state as usual
-        setMedicationData((prevData) => ({
-          ...prevData,
-          [name]: value,
-        }));
-      }
+      const { name, value } = e.target;
+    
+      // For radio inputs, directly update the state value based on the selected radio option
+      setMedicationData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
     };
   
     const handleSubmit = (e) => {
       e.preventDefault();
-  
+
       // Make the POST request with Axios
-      axios.post('https://health-connect-cd7q.onrender.com/api/v1/medication', medicationData, {
+      axios.post('https://health-connect-cd7q.onrender.com/api/v1/medications', medicationData, {
         headers: {
           Authorization: `Bearer ${userToken}`,
           'Content-Type': 'application/json',
@@ -92,7 +75,7 @@ const CreateMedication = () => {
       </h2>
       <form onSubmit={handleSubmit} className=" max-w-[400px]">
         <div className=" w-full">
-          <label htmlFor="">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -104,7 +87,7 @@ const CreateMedication = () => {
           />
         </div>
         <div className=" pt-5">
-          <label htmlFor="">Prescription</label> <br />
+          <label htmlFor="description">Prescription</label> <br />
           <textarea
             type="text"
             id="description"
@@ -113,8 +96,20 @@ const CreateMedication = () => {
             onChange={handleChange}
             cols="30"
             rows="4"
-            className=" w-full resize-none mt-2 border border-black rounded-md"
+            className=" w-full resize-none p-2 mt-2 border border-black rounded-md"
           ></textarea>
+        </div>
+        <div className=" w-full">
+          <label htmlFor="dosage">Dosage</label>
+          <input
+            type="text"
+            id="dosage"
+            name="dosage"
+            value={medicationData.dosage}
+            onChange={handleChange}
+            placeholder="Dosage"
+            className=" w-full border border-black py-2 pl-3 mt-2 rounded-md"
+          />
         </div>
         <div className=" pt-5">
           <label htmlFor="">Date/Day</label>
@@ -125,7 +120,7 @@ const CreateMedication = () => {
               name="startdate"
               value={medicationData.startdate}
               onChange={handleChange}
-              className=" w-full py-2 pl-2 rounded-md border border-black"
+              className=" w-full p-2 rounded-md border border-black"
             />
             <input
               type="date"
@@ -133,7 +128,7 @@ const CreateMedication = () => {
               name="enddate"
               value={medicationData.enddate}
               onChange={handleChange}
-              className=" w-full py-2 pl-2 rounded-md border border-black"
+              className=" w-full p-2 rounded-md border border-black"
             />
           </div>
         </div>
@@ -141,36 +136,39 @@ const CreateMedication = () => {
           <label htmlFor="">Time/Frequency</label> <br />
           <div className="">
             <input
-              type="checkbox"
-              name="morning"
-              id="morning"
-              checked={medicationData.timefrequency.includes('morning')}
+              type="radio"
+              id="day"
+              name="timefrequency"
+              value="day"
+              checked={medicationData.timefrequency === 'day'}
               onChange={handleChange}
-              className=" mr-2" 
+              className=" mr-2"
             />
-            <label htmlFor="morning">Morning</label>
+            <label htmlFor="day">Day</label>
           </div>
           <div className="">
-            <input 
-              type="checkbox"
-              name="afternoon"
+            <input
+              type="radio"
               id="afternoon"
-              checked={medicationData.timefrequency.includes('afternoon')}
+              name="timefrequency"
+              value="afternoon"
+              checked={medicationData.timefrequency === 'afternoon'}
               onChange={handleChange}
-              className=" mr-2" 
+              className=" mr-2"
             />
             <label htmlFor="afternoon">Afternoon</label>
           </div>
           <div className="">
-            <input 
-              type="checkbox"
-              name="evening"
-              id="evening"
-              checked={medicationData.timefrequency.includes('evening')}
-              onChange={handleChange}
-              className=" mr-2"
-            />
-            <label htmlFor="evening">Evening</label>
+          <input
+            type="radio"
+            id="night"
+            name="timefrequency"
+            value="night"
+            checked={medicationData.timefrequency === 'night'}
+            onChange={handleChange}
+            className=" mr-2"
+          />
+          <label htmlFor="night">Night</label>
           </div>
         </div>
         <div className=" pt-5">
