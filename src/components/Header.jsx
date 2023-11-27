@@ -49,7 +49,7 @@ export default function Header() {
                       <Link
                         class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/doctor"
+                        to="/"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                         Home
@@ -68,7 +68,7 @@ export default function Header() {
                       <Link
                         class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/doctor"
+                        to="/"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                        Features
@@ -78,7 +78,7 @@ export default function Header() {
                       <Link
                         class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/doctor"
+                        to="/"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                       Faq
