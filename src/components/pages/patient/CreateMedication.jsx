@@ -28,7 +28,7 @@ const CreateMedication = () => {
         </div>
         <div className=" pt-5">
           <label htmlFor="">Date/Day</label>
-          <div className=" flex w-full gap-4 pt-2">
+          <div className=" flex w-full  max-[991px]:flex-wrap gap-4 pt-2">
             <input
               type="date"
               className=" w-full py-2 pl-2 rounded-md border border-black"
