@@ -2,10 +2,11 @@ import React from 'react'
    import { GiPadlock } from "react-icons/gi";
    import { RiHealthBookLine } from "react-icons/ri";
    import { MdOutlineManageAccounts } from "react-icons/md";
-   import { BiSolidConversation } from "react-icons/bi";
+
+import { Link } from 'react-router-dom';
 export default function Banner() {
   return (
-    <div className="mb-16">
+    <div id='Banner' className="mb-16">
         <div className="bg-slate-100 pt-24">
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-24">
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -47,14 +48,16 @@ export default function Banner() {
                 </p>
                 </div>
                 <div className="flex items-center sm:justify-center">
-                <button
+               <Link to='/sign-up'>
+                 <button
                     type="submit"
                     className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#0A7DCF] hover:bg-[#0A7DCF]/80 focus:shadow-outline focus:outline-none"
                 >
                     Get started
                 </button>
+               </Link>
                 <a
-                    href="/"
+                    href="#features"
                     aria-label=""
                     className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-[#0A7DCF]"
                 >
