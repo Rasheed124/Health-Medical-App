@@ -5,36 +5,72 @@ import { FaCheck, FaEye, FaTimes } from "react-icons/fa";
 import { GiPawHeart } from "react-icons/gi";
 import { RiPrinterFill } from "react-icons/ri";
 import { MdCancel } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 
 import { format } from "date-fns";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
   export default function Medications() {
     const [medications, setMedications] = useState([]);
-        const token =  sessionStorage.getItem("userToken");
-        // console.log(token);
-    useEffect(() => {
+    const token = sessionStorage.getItem("userToken");
+    // console.log(token);
+    // useEffect(() => {
+    //   axios
+    //     .get("https://health-connect-cd7q.onrender.com/api/v1/medication", {
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //       },
+    //     })
+    //     .then((response) => {
+    //       setMedications(response.data);
+
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching data:", error);
+    //     });
+    // }, [token]);
+
+    const fetchMedications = () => {
       axios
-        .get("https://health-connect-cd7q.onrender.com/api/v1/medication", {
+        .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         .then((response) => {
           setMedications(response.data);
-          
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
-    }, [token]); 
+    };
 
-    // console.log(medications)
+    useEffect(() => {
+      fetchMedications();
+    }, [token]);
 
+    // Function to handle medication deletion
+    const handleDelete = (medicationId) => {
+      axios
+        .delete(
+          `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then(() => {
+          fetchMedications(); // Refresh medication list after deletion
+        })
+        .catch((error) => {
+          console.error("Error deleting medication:", error);
+        });
+    };
 
-    
     return (
       <>
         <div class="mx-auto max-w-screen-xl px-4  ">
@@ -71,13 +107,16 @@ import axios from "axios";
                     </th>
 
                     <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                      Aside By
+                      Actions
                     </th>
                     <th className="px-4 py-2"></th>
                   </tr>
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 text-left">
+
+               
+
                   {medications.medications?.map((medication) => (
                     <tr key={medication._id}>
                       <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
@@ -85,12 +124,9 @@ import axios from "axios";
                       </td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                         {format(new Date(medication.startdate), "MM/dd/yyyy")}
-
-                    
                       </td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                         {format(new Date(medication.enddate), "MM/dd/yyyy")}
-
                       </td>
 
                       <td className="whitespace-nowrap px-4 space-x-2 py-2">
@@ -99,10 +135,13 @@ import axios from "axios";
                             <FaEye />
                           </button>
                           <button className="text-[#26af48] flex mb-3 items-center font-medium text-[13px] bg-[#0fb76b1f]  rounded-[5px] py-[4px] px-[8px]">
-                            <FaCheck />
+                            <HiOutlinePencilSquare />
                           </button>
-                          <button className="text-[#e63c3c] flex mb-3 items-center font-medium text-[13px] bg-[#f211361f]  rounded-[5px] py-[4px] px-[8px]">
-                            <MdCancel />{" "}
+                          <button
+                            className="text-[#e63c3c] flex mb-3 items-center font-medium text-[13px] bg-[#f211361f]  rounded-[5px] py-[4px] px-[8px]"
+                            onClick={() => handleDelete(medication._id)}
+                          >
+                            <MdDeleteForever />
                           </button>
                         </div>
                       </td>

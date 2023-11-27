@@ -30,7 +30,7 @@ const handleLogout = () => {
       sessionStorage.removeItem("userType");
       sessionStorage.removeItem("userToken");
       setIsLoggedIn(false); // Update the state to reflect the logout
-      navigate("/login");
+      navigate("/");
     })
     .catch((error) => {
       // Handle signout error
@@ -116,7 +116,7 @@ const handleLogout = () => {
                 className="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <IoIosLogOut className="text-xl" />
-                <span className="text-sm font-medium"> Logout</span>
+                <span className="text-sm font-medium"> Sign Out</span>
               </Link>
             </li>
           ) : null}

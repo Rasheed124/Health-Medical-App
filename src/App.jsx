@@ -22,6 +22,7 @@ import HomePage from "./components/HomePage";
 import CreateMedication from "./components/pages/patient/CreateMedication";
 import BookAppointment from "./components/pages/patient/BookAppointment";
 import Medications from "./components/pages/patient/Medications";
+import DailyMedications from "./components/pages/patient/DailyMedications";
 
 const isAuthenticated = () => {
   // Check if userType exists in session storage
@@ -140,6 +141,10 @@ const router = createBrowserRouter([
       {
         path: "create-medication",
         element: <CreateMedication />,
+      },
+      {
+        path: "daily-medication",
+        element: <DailyMedications />,
       },
       {
         path: "medication",

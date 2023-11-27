@@ -7,6 +7,7 @@ import Medications from '../pages/patient/Medications';
 import MedicalReport from '../pages/patient/MedicalReport';
 import ChangePassword from '../pages/patient/ChangePassword';
 import CreateMedication from '../pages/patient/CreateMedication';
+import DailyMedications from '../pages/patient/DailyMedications';
 
 
 
@@ -23,6 +24,10 @@ export default function PatientControl() {
         <Route
           path="/create-medication"
           element={<CreateMedication />}
+        />
+        <Route
+          path="/daily-medication"
+          element={<DailyMedications />}
         />
       </Routes>
     </>

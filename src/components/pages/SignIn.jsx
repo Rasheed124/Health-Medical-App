@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("patient"); // Default to "patient"
+
 
   const navigate = useNavigate();
 
@@ -18,10 +18,12 @@ const SignIn = () => {
       // navigate("./doctor");
       const userToken = user.user.accessToken;
 
-      console.log(userToken);
+      const userType = user.user.displayName;
 
       // Save user type and ID to sessionStorage
       sessionStorage.setItem("userType", userType);
+
+  
       // Save the user token to sessionStorage
       sessionStorage.setItem("userToken", userToken);
 
@@ -35,7 +37,7 @@ const SignIn = () => {
 
          setEmail("");
          setPassword("");
-         setUserType("patient");
+    
     } catch (error) {
       // Handle network error
       console.error("Error:", error);
@@ -131,8 +133,8 @@ const SignIn = () => {
                 </label>
                 <select
                   className="w-full mt-1 p-2 border rounded-md"
-                  value={userType}
-                  onChange={(e) => setUserType(e.target.value)}
+                  // value={userType}
+                  // onChange={(e) => setUserType(e.target.value)}
                 >
                   <option value="patient">Patient</option>
                   <option value="doctor">Doctor</option>
