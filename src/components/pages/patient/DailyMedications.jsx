@@ -4,8 +4,7 @@ import { FaCheck, FaEye, FaTimes } from "react-icons/fa";
 import { GiPawHeart } from "react-icons/gi";
 import { RiPrinterFill } from "react-icons/ri";
 import { MdCancel } from "react-icons/md";
- import { HiOutlinePencilSquare } from "react-icons/hi2";
-
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 import { format } from "date-fns";
 
@@ -15,29 +14,74 @@ import axios from "axios";
 export default function DailyMedications() {
   const [medications, setMedications] = useState([]);
   const token = sessionStorage.getItem("userToken");
-  // console.log(token);
 
-    const fetchMedications = () => {
-      axios
-        .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
+  // Use local state to keep track of the taken status for each medication
+  const [takenMedications, setTakenMedications] = useState({});
+
+  const fetchMedications = () => {
+    axios
+      .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        // Initialize the takenMedications state based on the 'taken' property
+        const initialTakenMedications = {};
+        response.data.medications.forEach((medication) => {
+          initialTakenMedications[medication._id] = medication.taken || false;
+        });
+        setTakenMedications(initialTakenMedications);
+
+        setMedications(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
+
+  const handleCheckboxChange = (medicationId) => {
+    setTakenMedications((prevTakenMedications) => ({
+      ...prevTakenMedications,
+      [medicationId]: !prevTakenMedications[medicationId],
+    }));
+
+    // Call a function to send the updated medication data to the endpoint
+    updateMedicationStatus(medicationId);
+  };
+
+  const updateMedicationStatus = (medicationId) => {
+    const updatedMedication = medications.medications.find(
+      (medication) => medication._id === medicationId,
+    );
+
+    // Update the 'taken' property based on the checkbox status
+    updatedMedication.taken = takenMedications[medicationId];
+
+    // Send the updated data to the endpoint
+    axios
+      .patch(
+        `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`,
+        updatedMedication,
+        {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        })
-        .then((response) => {
-          setMedications(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    };
+        },
+      )
+      .then((response) => {
+        // Handle the response if needed
+      })
+      .catch((error) => {
+        console.error("Error updating medication status:", error);
+      });
+  };
 
-    useEffect(() => {
-      fetchMedications();
-    }, [token]);
-  console.log(medications)
+  useEffect(() => {
+    fetchMedications();
+  }, [token]);
 
- 
+  console.log(medications);
 
   return (
     <>
@@ -60,15 +104,9 @@ export default function DailyMedications() {
                     Frequency
                   </th>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Description
-                  </th>
-                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Note
+                    Action
                   </th>
 
-                  {/* <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Action
-                  </th> */}
                   <th className="px-4 py-2"></th>
                 </tr>
               </thead>
@@ -86,10 +124,13 @@ export default function DailyMedications() {
                       {medication.timefrequency}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {medication.description}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {medication.note}
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={takenMedications[medication._id] || false}
+                        onChange={() => handleCheckboxChange(medication._id)}
+                      />
                     </td>
 
                     {/* <td className="whitespace-nowrap px-4 space-x-2 py-2">
