@@ -24,6 +24,7 @@ import BookAppointment from "./components/pages/patient/BookAppointment";
 import Medications from "./components/pages/patient/Medications";
 import DailyMedications from "./components/pages/patient/DailyMedications";
 import TrackMedication from "./components/pages/doctors/TrackMedication";
+import NotFound from "./components/pages/NotFound ";
 
 const isAuthenticated = () => {
   // Check if userType exists in session storage
@@ -156,6 +157,10 @@ const router = createBrowserRouter([
         element: <Medications />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
