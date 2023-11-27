@@ -8,6 +8,7 @@ import { MdCancel } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 
 import { format } from "date-fns";
+import Modal from "react-modal"; // Import the modal library
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -16,6 +17,28 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
   export default function Medications() {
     const [medications, setMedications] = useState([]);
     const token = sessionStorage.getItem("userToken");
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [medicationToDelete, setMedicationToDelete] = useState(null);
+
+
+     const openModal = (medicationId) => {
+       setMedicationToDelete(medicationId);
+       setModalIsOpen(true);
+     };
+
+     // Function to handle closing the modal
+     const closeModal = () => {
+       setMedicationToDelete(null);
+       setModalIsOpen(false);
+     };
+
+     // Function to handle medication deletion
+    //  const handleDelete = (medicationId) => {
+    //    openModal(medicationId);
+    //  };
+
+
     // console.log(token);
     // useEffect(() => {
     //   axios
@@ -54,43 +77,35 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
 
     // Function to handle medication deletion
     const handleDelete = (medicationId) => {
-      axios
-        .delete(
-          `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          },
-        )
-        .then(() => {
-          fetchMedications(); // Refresh medication list after deletion
-        })
-        .catch((error) => {
-          console.error("Error deleting medication:", error);
-        });
+          openModal(medicationId);
     };
+
+     const confirmDelete = () => {
+       axios
+         .delete(
+           `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationToDelete}`,
+           {
+             headers: {
+               Authorization: `Bearer ${token}`,
+             },
+           },
+         )
+         .then(() => {
+           closeModal();
+           fetchMedications();
+         })
+         .catch((error) => {
+           console.error("Error deleting medication:", error);
+         });
+     };
 
     return (
       <>
         <div class="mx-auto max-w-screen-xl px-4  ">
-          {/* <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:divide-x sm:divide-gray-100 border-2">
-            <div class="flex flex-col px-4 py-8 text-center"></div>
-
-            <div class="flex flex-col px-4 py-8 text-center"></div>
-          </div> */}
+         
           <h3 className="py-5">Patient Appointment</h3>
 
-          {/* <div class="space-x-6 pb-5">
-            <a
-              className="inline-block rounded-full border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-              href="/download"
-            >
-              Upcomings
-            </a>
-            <p className="inline-block rounded ">Today</p>
-          </div> */}
-
+       
           <div className="border-2 ">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y-2 text-center divide-gray-200 bg-white text-sm">
@@ -114,9 +129,6 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 text-left">
-
-               
-
                   {medications.medications?.map((medication) => (
                     <tr key={medication._id}>
                       <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
@@ -152,6 +164,41 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
             </div>
           </div>
         </div>
+
+        {/* Modal */}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Delete Medication Modal"
+          className="modal"
+          overlayClassName="modal-overlay"
+        >
+          <div className="rounded-lg bg-white p-8 shadow-2xl">
+            <h2 className="text-lg font-bold">
+              Are you sure you want to do that?
+            </h2>
+            <p className="mt-2 text-sm text-gray-500">
+              Doing that could have cause some issues elsewhere, are you 100%
+              sure it's OK?
+            </p>
+            <div className="mt-4 flex gap-2">
+              <button
+                type="button"
+                className="rounded bg-green-50 px-4 py-2 text-sm font-medium text-green-600"
+                onClick={confirmDelete}
+              >
+                Yes, I'm sure
+              </button>
+              <button
+                type="button"
+                className="rounded bg-gray-50 px-4 py-2 text-sm font-medium text-gray-600"
+                onClick={closeModal}
+              >
+                No, go back
+              </button>
+            </div>
+          </div>
+        </Modal>
       </>
     );
   };

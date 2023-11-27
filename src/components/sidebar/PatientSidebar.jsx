@@ -17,10 +17,14 @@ import { IoIosLogOut } from "react-icons/io";
 import { signOut } from "firebase/auth";
 
 import { auth } from "../../firebase";
+import { useState } from "react";
 
 
 
 export default function PatientSidebar() {
+
+const [isLoggedIn, setIsLoggedIn] = useState(true);
+
 
   const handleLogout = () => {
     signOut(auth)
