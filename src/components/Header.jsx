@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import health from '../../src/assets/Health.png'
 export default function Header() {
   return (
     <>
@@ -10,13 +9,13 @@ export default function Header() {
             {/* <!-- Navbar --> */}
             <nav class="absolute top-0 left-0 right-0 flex flex-wrap items-center p-4 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
               <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
-                <Link
+                <a
                   class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0"
-                  to="/"
+                  href="/"
                 >
                   {" "}
-                  HealthConnect{" "}
-                </Link>
+                 <img src={health} alt="" />
+                </a>
                 <button
                   navbar-trigger
                   class="px-3 py-1 ml-2 leading-none   transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg  ease-soft-in-out md:hidden"
@@ -45,83 +44,83 @@ export default function Header() {
                   class="items-center flex-grow overflow-hidden transition-all duration-500 ease-soft lg-max:max-h-0 basis-full flex lg:basis-auto"
                 >
                   <ul class="md:flex  hidden    pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
-                    <li>
-                      <Link
-                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
+                    <li >
+                      <a
+                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-lg text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/"
+                        href="#Banner"
                       >
-                        <i class="mr-1 fa fa-chart-pie opacity-60"></i>
+                        <i class="mr-1  fa fa-chart-pie opacity-60"></i>
                         Home
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
-                        to="/"
+                      <a
+                        class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-lg text-slate-700 lg:px-2"
+                        href="#intro"
                       >
                         <i class="mr-1 fa fa-user opacity-60"></i>
                            About Us
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
+                      <a
+                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-lg text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/"
+                        href="#features"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                        Features
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
+                      <a
+                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-lg text-slate-700 lg:px-2"
                         aria-current="page"
-                        to="/"
+                        href="#faq"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                       Faq
-                      </Link>
+                      </a>
                     </li>
                     {/* <li>
-                      <Link
+                      <a
                         class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
-                        to="/sign-up"
+                        href="/sign-up"
                       >
                         <i class="mr-1 fas fa-user-circle opacity-60"></i>
                         Sign Up
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
+                      <a
                         class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
-                        to="/sign-in"
+                        href="/sign-in"
                       >
                         <i class="mr-1 fas fa-key opacity-60"></i>
                         Sign In
-                      </Link>
+                      </a>
                     </li> */}
                   </ul>
                   {/* <!-- online builder btn  --> */}
                   <li class="md:flex items-center hidden ">
-                    <Link
+                    <a
                       class="leading-pro ease-soft-in text-[#0A7DCF] border-[#0A7DCF] text-xs tracking-tight-soft bg-150 bg-x-25 rounded-3.5xl hover:border-[#0A7DCF] hover:scale-102 hover:text-[#0A7DCF] active:hover:border-[#0A7DCF] active:hover:scale-102 active:hover:text-[#0A7DCF] active:opacity-85 active:shadow-soft-xs active:bg-[#0A7DCF] active:border-[#0A7DCF] mr-2 mb-0 inline-block cursor-pointer border border-solid bg-transparent py-3 px-8 text-center align-middle font-bold uppercase shadow-none transition-all hover:bg-transparent hover:opacity-75 hover:shadow-none active:scale-100 active:text-white active:hover:bg-transparent active:hover:opacity-75 active:hover:shadow-none"
                       // target="_blank"
-                      to="/sign-in"
+                      href="/sign-in"
                     >
-                      Login
-                    </Link>
+                      Sign-in
+                    </a>
                   </li>
                   <ul class="hidden pl-0 mb-0 list-none lg:block lg:flex-row">
                     <li>
-                      <Link
-                        to="/sign-up"
+                      <a
+                        href="/sign-up"
                         // target="_blank"
                         class="leading-pro hover:scale-102 hover:shadow-soft-xs active:opacity-85 ease-soft-in text-xs tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-[#0A7DCF] to-[#0A7DCF] rounded-3.5xl mb-0 mr-1 inline-block cursor-pointer border-0 bg-transparent px-8 py-3 text-center align-middle font-bold uppercase text-white transition-all"
                       >
                         Sign-Up
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
