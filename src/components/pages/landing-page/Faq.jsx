@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { FaQuestion } from "react-icons/fa";
 const Item = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
     // useState
@@ -50,19 +50,7 @@ export default function Faq() {
             <div class="flex flex-col mb-16 sm:text-center">
             <a href="/" class="mb-6 sm:mx-auto">
                 <div class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-100">
-                <svg
-                    class="w-10 h-10 text-[#0A7DCF]"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                >
-                    <polygon
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                </svg>
+                <FaQuestion className=' text-[#0A7DCF] text-2xl'/>
                 </div>
             </a>
             <div class="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">

@@ -19,13 +19,13 @@ export default function Header() {
                 </Link>
                 <button
                   navbar-trigger
-                  class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden"
+                  class="px-3 py-1 ml-2 leading-none   transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg  ease-soft-in-out md:hidden"
                   type="button"
                   aria-controls="navigation"
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
+                  <span class="inline-block mt-2 align-middle    bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
                     <span
                       bar1
                       class="w-5.5 rounded-xs relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"
@@ -42,9 +42,9 @@ export default function Header() {
                 </button>
                 <div
                   navbar-menu
-                  class="items-center flex-grow overflow-hidden transition-all duration-500 ease-soft lg-max:max-h-0 basis-full lg:flex lg:basis-auto"
+                  class="items-center flex-grow overflow-hidden transition-all duration-500 ease-soft lg-max:max-h-0 basis-full flex lg:basis-auto"
                 >
-                  <ul class="flex flex-col pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
+                  <ul class="md:flex  hidden    pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
                     <li>
                       <Link
                         class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
@@ -52,7 +52,7 @@ export default function Header() {
                         to="/doctor"
                       >
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
-                        Dashboard
+                        Home
                       </Link>
                     </li>
                     <li>
@@ -61,7 +61,27 @@ export default function Header() {
                         to="/"
                       >
                         <i class="mr-1 fa fa-user opacity-60"></i>
-                        Profile
+                           About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
+                        aria-current="page"
+                        to="/doctor"
+                      >
+                        <i class="mr-1 fa fa-chart-pie opacity-60"></i>
+                       Features
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
+                        aria-current="page"
+                        to="/doctor"
+                      >
+                        <i class="mr-1 fa fa-chart-pie opacity-60"></i>
+                      Faq
                       </Link>
                     </li>
                     {/* <li>
@@ -84,7 +104,7 @@ export default function Header() {
                     </li> */}
                   </ul>
                   {/* <!-- online builder btn  --> */}
-                  <li class="flex items-center">
+                  <li class="md:flex items-center hidden ">
                     <Link
                       class="leading-pro ease-soft-in text-[#0A7DCF] border-[#0A7DCF] text-xs tracking-tight-soft bg-150 bg-x-25 rounded-3.5xl hover:border-[#0A7DCF] hover:scale-102 hover:text-[#0A7DCF] active:hover:border-[#0A7DCF] active:hover:scale-102 active:hover:text-[#0A7DCF] active:opacity-85 active:shadow-soft-xs active:bg-[#0A7DCF] active:border-[#0A7DCF] mr-2 mb-0 inline-block cursor-pointer border border-solid bg-transparent py-3 px-8 text-center align-middle font-bold uppercase shadow-none transition-all hover:bg-transparent hover:opacity-75 hover:shadow-none active:scale-100 active:text-white active:hover:bg-transparent active:hover:opacity-75 active:hover:shadow-none"
                       // target="_blank"

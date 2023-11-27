@@ -57,7 +57,7 @@ const SignIn = () => {
         <input
           type="email"
           required
-          className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="w-full  rounded-lg  border border-black py-3 pl-3 pe-12 text-sm shadow-sm"
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +66,7 @@ const SignIn = () => {
         <input
           type="password"
           required
-          className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+          className="w-full rounded-lg border border-black py-3 pl-3 pe-12 text-sm shadow-sm"
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -77,7 +77,7 @@ const SignIn = () => {
             Select User Type:
           </label>
           <select
-            className="w-full mt-1 p-2 border rounded-md"
+            className="w-full border border-black mt-1 p-2  rounded-md"
             value={userType}
             onChange={(e) => setUserType(e.target.value)}
           >

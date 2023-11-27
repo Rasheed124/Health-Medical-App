@@ -237,27 +237,27 @@ const Signup = () => {
                   name="text"
                   type="text"
                   placeholder="First Name"
-                  className="w-[95%] px-2 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350  "
+                  className="w-[95%] px-2 pl-3 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350  "
                 ></input>
                 <input
                   name="text"
                   type="text"
                   placeholder="Last Name"
-                  className="w-[95%] place-self-end px-2 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350  "
+                  className="w-[95%] pl-3 place-self-end px-2 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350  "
                 ></input>
               </div>
               <input
                 name="text"
                 type="email"
                 placeholder="Email address"
-                className="w-full px-2 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350 mb-4 "
+                className="w-full px-2 pl-3 py-2 border border-[#949494] outline-none rounded-full  placeholder-grey-350 mb-4 "
               ></input>
               <div className="relative">
                 <input
                   name="password"
                   type="password"
                   placeholder="Password ( 8 or more characters )"
-                  className="w-full px-2 py-2 border  border-[#949494] outline-none rounded-full  placeholder-grey-350 mb-4 "
+                  className="w-full px-2 pl-3 py-2 border  border-[#949494] outline-none rounded-full  placeholder-grey-350 mb-4 "
                 ></input>{" "}
                 <FaEye className=" absolute right-[20px] cursor-pointer top-[12px]" />
               </div>

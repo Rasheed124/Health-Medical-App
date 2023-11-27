@@ -1,5 +1,8 @@
 import React from 'react'
-
+   import { GiPadlock } from "react-icons/gi";
+   import { RiHealthBookLine } from "react-icons/ri";
+   import { MdOutlineManageAccounts } from "react-icons/md";
+   import { BiSolidConversation } from "react-icons/bi";
 export default function Banner() {
   return (
     <div className="mb-16">
@@ -7,7 +10,7 @@ export default function Banner() {
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-24">
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <div>
-                    <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-[#0A7DCF]">
+                    <p className="inline-block px-3  mb-4 text-sm py-2 font-semibold tracking-wider text-white uppercase rounded-full bg-[#0A7DCF]">
                         HealthConnect
                     </p>
                 </div>
@@ -65,19 +68,7 @@ export default function Banner() {
         <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
             <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-slate-100">
-                <svg
-                className="w-10 h-10 text-[#0A7DCF]"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-                >
-                <polygon
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-                </svg>
+               <GiPadlock className=' text-[#0A7DCF] text-2xl'/>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
                Secure and Private Communication      
@@ -85,19 +76,7 @@ export default function Banner() {
             </div>
             <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-slate-100">
-                <svg
-                className="w-10 h-10 text-[#0A7DCF]"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-                >
-                <polygon
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-                </svg>
+                <MdOutlineManageAccounts className=' text-[#0A7DCF] text-2xl'/>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
                Easy Prescription Management          
@@ -105,23 +84,11 @@ export default function Banner() {
             </div>
             <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-slate-100">
-                <svg
-                className="w-10 h-10 text-[#0A7DCF]"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-                >
-                <polygon
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-                </svg>
+               <RiHealthBookLine className=' text-[#0A7DCF] text-2xl'/>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
                 Real-Time Health Tracking        
-            </p>
+            </p> 
             </div>
         </div>
         </div>

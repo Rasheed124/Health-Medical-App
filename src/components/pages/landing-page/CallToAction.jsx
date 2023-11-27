@@ -20,7 +20,7 @@ export default function CallToAction() {
         </div>
         <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
           <div>
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-[#0A7DCF]">
+            <p className="inline-block px-3  py-1 mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-[#0A7DCF]">
               Brand new
             </p>
           </div>
