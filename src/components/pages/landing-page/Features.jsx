@@ -1,4 +1,11 @@
 import React from 'react'
+import { BiSolidConversation } from "react-icons/bi";
+import { DiStreamline } from "react-icons/di";
+import { MdTimer,  MdConnectWithoutContact ,MdManageAccounts} from "react-icons/md";
+import { VscGraphLine } from "react-icons/vsc";
+import { FaCalendarAlt } from "react-icons/fa";
+import { GiMedicines } from "react-icons/gi";
+
 
 export default function Features() {
   return (
@@ -44,19 +51,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                        <BiSolidConversation className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Effortless and Confidential Conversations Between Patients and Doctors</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -68,19 +63,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                        <DiStreamline className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold"> Streamlined Prescription Handling from Doctors to Pharmacies</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -92,19 +75,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                       <MdTimer className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Never Miss a Dose with Timely Medication Alerts</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -116,19 +87,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                        <VscGraphLine  className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Monitor Your Health Progress with Ease</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -140,19 +99,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                       <MdConnectWithoutContact  className=' text-[#0A7DCF] text-2xl' />
                     </div>
                     <p className="mb-2 font-bold">Connect with Your Doctor Anytime, Anywhere</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -164,19 +111,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                        <GiMedicines  className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Hassle-Free Prescription Fulfilment</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -188,19 +123,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                        <FaCalendarAlt className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Simplify Your Health Calendar</p>
                     <p className="text-sm leading-5 text-gray-900">
@@ -212,19 +135,7 @@ export default function Features() {
                 <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
                     <div className="p-5">
                     <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-slate-100">
-                        <svg
-                        className="w-8 h-8 text-[#0A7DCF]"
-                        stroke="currentColor"
-                        viewBox="0 0 52 52"
-                        >
-                        <polygon
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                            points="29 13 14 29 25 29 23 39 38 23 27 23"
-                        />
-                        </svg>
+                       <MdManageAccounts  className=' text-[#0A7DCF] text-2xl'/>
                     </div>
                     <p className="mb-2 font-bold">Simplifying Health Management with Intuitive Design</p>
                     <p className="text-sm leading-5 text-gray-900">
