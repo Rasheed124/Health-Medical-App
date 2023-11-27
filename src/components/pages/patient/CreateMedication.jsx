@@ -9,7 +9,7 @@ const CreateMedication = () => {
       startdate: '',
       enddate: '',
       timefrequency: [],
-      assignedto: '',
+      // assignedto: '',
     });
   
     const [patients, setPatients] = useState([]);
@@ -20,7 +20,7 @@ const CreateMedication = () => {
 
     useEffect(() => {
       // Fetch the list of patients from the API
-      axios.get('YOUR_PATIENTS_API_ENDPOINT', {
+      axios.get('https://health-connect-cd7q.onrender.com/api/v1/patients', {
         headers: {
           Authorization: `Bearer ${userToken}`,
         },
@@ -90,7 +90,7 @@ const CreateMedication = () => {
         {" "}
         Create A Medication
       </h2>
-      <form action={handleSubmit} className=" max-w-[400px]">
+      <form onSubmit={handleSubmit} className=" max-w-[400px]">
         <div className=" w-full">
           <label htmlFor="">Name</label>
           <input
