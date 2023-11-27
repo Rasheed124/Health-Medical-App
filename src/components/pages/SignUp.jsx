@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { FaApple, FaEye, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 
 const Signup = () => {
   // State variables for form fields
@@ -16,20 +16,31 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Additional logic based on user type or other form fields
-    console.log("Form submitted", {
-      firstName,
-      lastName,
-      email,
-      password,
-      userType,
-    });
+    axios
+      .post("https://health-connect-cd7q.onrender.com/api/v1/auth/register", {
+        email: email,
+        firstname: firstName,
+        lastname: lastName,
+        password: password,
+        userType: userType,
+      })
+      .then((response) => {
+        // setMedications(response.data);
 
-    // Reset form fields if needed
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
+        console.log(response);
+
+        // Reset form fields
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setUserType("patient");
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+
+     
   };
 
   return (

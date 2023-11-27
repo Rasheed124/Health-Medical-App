@@ -31,6 +31,11 @@ const SignIn = () => {
       } else {
         navigate("/patient");
       }
+
+
+         setEmail("");
+         setPassword("");
+         setUserType("patient");
     } catch (error) {
       // Handle network error
       console.error("Error:", error);

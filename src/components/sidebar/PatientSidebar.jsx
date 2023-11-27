@@ -89,6 +89,17 @@ export default function PatientSidebar() {
 
             <li>
               <Link
+                to={"/patient/medication"}
+                class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
+              >
+                <TbMessageCircle2Filled className="text-xl" />
+
+                <span class="text-sm font-medium">  Medication</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
                 to={"/patient/change-password"}
                 class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
