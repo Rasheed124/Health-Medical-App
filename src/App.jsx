@@ -44,7 +44,7 @@ const PrivateRoute = ({ element, userTypeRequired, ...rest }) => {
         userTypeRequired !== sessionStorage.getItem("userType")
       ) {
         // If userTypeRequired is specified and does not match the user's type, redirect to the default page ("/")
-        navigate("/", { replace: true });
+        navigate("/doctor", { replace: true });
       }
     };
 

@@ -26,7 +26,7 @@ const SignIn = () => {
       sessionStorage.setItem("userToken", userToken);
 
       // Navigate to the desired page based on user type
-      if (userType === "doctor") {
+      if (userType === "patient") {
         navigate("/doctor");
       } else {
         navigate("/patient");
