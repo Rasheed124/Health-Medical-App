@@ -1,80 +1,70 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const CreateMedication = () => {
-    const [medicationData, setMedicationData] = useState({
-      name: '',
-      description: '',
-      dosage: '',
-      note: '',
-      startdate: '',
-      enddate: '',
-      timefrequency: '',
-    });
-  
-    const [patients, setPatients] = useState([]);
-    const [loading, setLoading] = useState(true);
-  
-    // Assuming you have the user token stored in the session
-    const userToken = sessionStorage.getItem('userToken');
+const EditMedication = ({ match }) => {
+  const medicationId = match.params.id;
 
-    useEffect(() => {
-      // Fetch the list of patients from the API
-      axios.get('https://health-connect-cd7q.onrender.com/api/v1/patients', {
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-        },
-      })
-        .then(response => {
-          setPatients(response.data);
-          setLoading(false);
-        })
-        .catch(error => {
-          console.error('Error fetching patients:', error.response ? error.response.data : error.message);
-          setLoading(false);
-        });
-    }, [userToken]);
+  const [medicationData, setMedicationData] = useState({
+    name: '',
+    description: '',
+    note: '',
+    startdate: '',
+    enddate: '',
+    timefrequency: '',
+  });
 
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-    
-      // For radio inputs, directly update the state value based on the selected radio option
-      setMedicationData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-      // Make the POST request with Axios
-      axios.post('https://health-connect-cd7q.onrender.com/api/v1/medications', medicationData, {
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-          'Content-Type': 'application/json',
-        },
-      })
+  useEffect(() => {
+    // Fetch the existing medication data for editing
+    axios.get(`https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`)
       .then(response => {
-        console.log('Medication added successfully:', response.data);
+        setMedicationData(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching medication data:', error.response ? error.response.data : error.message);
+        setError('Error fetching medication data');
+        setLoading(false);
+      });
+  }, [medicationId]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setMedicationData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    // Make the PUT or PATCH request to update the medication data
+    axios.put(`https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`, medicationData)
+      .then(response => {
+        console.log('Medication updated successfully:', response.data);
         // You may want to handle success or redirect the user here
       })
       .catch(error => {
-        console.error('Error adding medication:', error.response ? error.response.data : error.message);
+        console.error('Error updating medication:', error.response ? error.response.data : error.message);
         // Handle error
       });
+  };
 
-    };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
-    <div className=" w-full">
-      <h2 className=" py-4 text-xl text-[#0a7dcf] font-bold">
-        {" "}
-        Create A Medication
-      </h2>
-      <form onSubmit={handleSubmit} className=" max-w-[400px]">
-        <div className=" w-full">
+    <form onSubmit={handleUpdate} className="max-w-[400px]">
+      
+      <div className=" w-full">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -184,13 +174,12 @@ const CreateMedication = () => {
           ></textarea>
         </div>
         <div className=" pt-2">
-            <button type="submit" className=" py-2 px-4 bg-[#0A7DCF] text-white hover:bg-[#53D2E3] rounded-md">
-                Create Medication
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md mt-5">
+                Update Medication
             </button>
         </div>
-      </form>
-    </div>
+    </form>
   );
 };
 
-export default CreateMedication;
+export default EditMedication;
