@@ -90,32 +90,33 @@ export default function Faq() {
                         height="24"
                     />
                     </svg>
-                    <span class="relative">The</span>
+                    <span class="relative">Your</span>
                 </span>{' '}
-                quick, brown fox jumps over a lazy dog
+                 Questions Answered: HealthConnect FAQs
                 </h2>
                 <p class="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+                Got questions about HealthConnect? We've compiled a list of frequently asked questions to help you better understand our platform, its features, and how it can transform your healthcare experience. Browse through our FAQs for quick and clear answers to your queries."
                 </p>
             </div>
             </div>
             <div class="space-y-4">
-            <Item title="The quick, brown fox jumps over a lazy dog?">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+            <Item title="What is HealthConnect?">
+                HealthConnect is a digital platform designed to simplify communication and management between patients, doctors, and pharmacies, streamlining the healthcare process
             </Item>
-            <Item title="The first mate and his Skipper too will do?">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+            <Item title="How does HealthConnect protect my privacy?">
+                We prioritize your privacy with top-notch security measures, ensuring all personal health information shared on our platform is encrypted and accessible only to authorized individuals.
             </Item>
-            <Item title="Is the Space Pope reptilian!?">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+            <Item title="Can I schedule appointments with my doctor through HealthConnect?">
+               Yes, HealthConnect allows you to easily schedule and manage appointments with your healthcare provider directly through the platform.
             </Item>
-            <Item title="How much money you got on you?">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+            <Item title="How does the medication reminder feature work?">
+               Our medication reminder feature sends you notifications for your medication times based on the schedule set by you or your doctor, ensuring you never miss a dose.
+            </Item>
+             <Item title="Is HealthConnect integrated with local pharmacies?">
+               Yes, HealthConnect is integrated with a network of pharmacies, allowing for seamless prescription transfers and refills
+            </Item>
+             <Item title="Is there a cost to use HealthConnect?">
+              - HealthConnect offers various subscription plans. There's a basic free version, and premium features are available through paid plans. Details can be found on our pricing page
             </Item>
             </div>
         </div>

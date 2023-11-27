@@ -7,42 +7,41 @@ export default function Intro() {
                 <div className="flex flex-col justify-center">
                 <div className="max-w-xl mb-6">
                     <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                    The quick, brown fox
+                Empowering your health, 
                     <br className="hidden md:block" />
-                    jumps over{' '}
+                    simplifying  your care
                     <span className="relative px-1">
                         <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-600" />
                         <span className="relative inline-block text-[#0A7DCF]">
-                        a lazy dog
+                         Discover HealthConnect
                         </span>
                     </span>
                     </h2>
                     <p className="text-base text-gray-700 md:text-lg">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                    quae. explicabo.
+                   At HealthConnect, we bridge the gap in healthcare communication, simplifying the way patients, doctors, and pharmacies interact. Our platform is designed for ease, efficiency, and empowerment in health management. Driven by innovation and a commitment to user-friendly technology, HealthConnect is your partner in a seamless healthcare journey.
                     </p>
                 </div>
                 <div className="grid gap-5 row-gap-8 sm:grid-cols-2">
                     <div className="bg-white border-l-4 shadow-sm border-[#0A7DCF]">
                     <div className="h-full p-5 border border-l-0 rounded-r">
                         <h6 className="mb-2 font-semibold leading-5">
-                        I'll be sure to note that in my log
+                       For Doctors:
                         </h6>
                         <p className="text-sm text-gray-900">
-                        Lookout flogging bilge rat main sheet bilge water nipper fluke
-                        to go on account heave down.
+                       Dr. John Smith: "HealthConnect has transformed my patient care - it’s efficient, secure, and incredibly user-friendly.
                         </p>
                     </div>
                     </div>
                     <div className="bg-white border-l-4 shadow-sm border-[#0A7DCF]">
                     <div className="h-full p-5 border border-l-0 rounded-r">
                         <h6 className="mb-2 font-semibold leading-5">
-                        A business big enough that it could be listed
+                       For Patients:
                         </h6>
                         <p className="text-sm text-gray-900">
-                        Those options are already baked in with this model shoot me an
-                        email clear.
+                       Emily Johnson: "HealthConnect simplifies my health management beautifully. It's like having a personal health assistant in my pocket!
+
+
+
                         </p>
                     </div>
                     </div>

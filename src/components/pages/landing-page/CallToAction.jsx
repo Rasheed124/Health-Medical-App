@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function CallToAction() {
   return (
@@ -25,27 +25,33 @@ export default function CallToAction() {
             </p>
           </div>
           <h5 className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
-            Your new ideal style
+            Enhance Your Medical Practice with HealthConnect
           </h5>
           <p className="mb-5 text-gray-800">
-            <span className="font-bold">Lorem ipsum</span> dolor sit amet,
-            consectetur adipiscing elit. Etiam sem neque, molestie sit amet
-            venenatis et, dignissim ut erat. Sed aliquet velit id dui eleifend,
-            sed consequat odio sollicitudin.
+            <span className="font-bold">Step into the future</span> of
+            healthcare with HealthConnect. Our platform is designed to
+            streamline your practice, from managing patient records to digital
+            prescription services. Experience
           </p>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold">increased efficiency, </span> improved
+            patient communication, and better health outcomes. Join our network
+            of healthcare professionals transforming patient care.
+          </p>
+         
           <div className="flex items-center">
             <button
               type="submit"
               className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#0A7DCF] hover:bg-[#0A7DCF]/80 focus:shadow-outline focus:outline-none"
             >
-              Get started
+           Register
             </button>
             <a
               href="/"
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-[#0A7DCF] hover:text-[#0A7DCF]"
             >
-              Learn More
+             Explore Features
               <svg
                 className="inline-block w-3 ml-2"
                 fill="currentColor"
@@ -59,4 +65,4 @@ export default function CallToAction() {
       </div>
     </div>
   );
-};
+}

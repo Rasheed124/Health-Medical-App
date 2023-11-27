@@ -8,7 +8,7 @@ export default function Banner() {
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <div>
                     <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-[#0A7DCF]">
-                        Health Priority
+                        HealthConnect
                     </p>
                 </div>
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -35,13 +35,12 @@ export default function Banner() {
                         height="24"
                         />
                     </svg>
-                    <span className="relative">The</span>
+                    <span className="relative"> Revolutionising</span>
                     </span>{' '}
-                    quick, brown fox jumps over a lazy dog
+                     Healthcare Communication  for Patients and Professionals            
                 </h2>
                 <p className="text-base text-gray-700 md:text-lg">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                    accusantium doloremque rem aperiam, eaque ipsa quae.
+                    Seamless integration of patient-doctor  communication, prescription management, and health tracking in one platform
                 </p>
                 </div>
                 <div className="flex items-center sm:justify-center">
@@ -81,7 +80,7 @@ export default function Banner() {
                 </svg>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
-                Make it better
+               Secure and Private Communication      
             </p>
             </div>
             <div className="inline-block p-8 text-center">
@@ -101,7 +100,7 @@ export default function Banner() {
                 </svg>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
-                Do it faster
+               Easy Prescription Management          
             </p>
             </div>
             <div className="inline-block p-8 text-center">
@@ -121,7 +120,7 @@ export default function Banner() {
                 </svg>
             </div>
             <p className="font-bold tracking-wide text-gray-800">
-                Working harder
+                Real-Time Health Tracking        
             </p>
             </div>
         </div>

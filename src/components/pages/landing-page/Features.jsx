@@ -58,10 +58,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Football Sports</p>
+                    <p className="mb-2 font-bold">Effortless and Confidential Conversations Between Patients and Doctors</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
+                           - HealthConnect offers a secure platform for private discussions, ensuring your health information stays confidential and accessible only to you and your healthcare provider.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -83,10 +82,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Bowling Sports</p>
+                    <p className="mb-2 font-bold"> Streamlined Prescription Handling from Doctors to Pharmacies</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Disrupt inspire and think tank, social entrepreneur but
-                        preliminary thinking think tank compelling.
+                        Facilitates the seamless transfer of prescriptions from doctors to pharmacies, reducing errors and saving time for patients and healthcare professionals alike.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -108,10 +106,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Cycling Sports</p>
+                    <p className="mb-2 font-bold">Never Miss a Dose with Timely Medication Alerts</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        A slice of heaven. O for awesome, this chocka full cuzzie is as
-                        rip-off as a cracker.
+                        Our system sends out reminders for medication times, helping you stay on track with your treatment plan without the stress of remembering every detail.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -133,10 +130,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Weight Lifting Sports</p>
+                    <p className="mb-2 font-bold">Monitor Your Health Progress with Ease</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Meanwhile, in behind the bicycle shed, Hercules Morse, as big as
-                        a horse.
+                       Track and monitor your health challenges, set goals, and view your progress over time, enabling a proactive approach to your wellbeing.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -158,10 +154,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Golf Sports</p>
+                    <p className="mb-2 font-bold">Connect with Your Doctor Anytime, Anywhere</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Disrupt inspire and think tank, social entrepreneur but
-                        preliminary thinking think tank compelling.
+                       Provides a platform for scheduling appointments, teleconsultations, and direct messaging with healthcare providers, offering convenience and flexibility
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -183,10 +178,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Hockey Sports</p>
+                    <p className="mb-2 font-bold">Hassle-Free Prescription Fulfilment</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        A business big enough that it could be listed on the NASDAQ goes
-                        belly up.
+                       - Direct integration with pharmacies streamlines the process of prescription fulfilment, making medication pickup or delivery more efficient
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -208,10 +202,9 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Shooting Sports</p>
+                    <p className="mb-2 font-bold">Simplify Your Health Calendar</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Lookout flogging bilge rat main sheet bilge water nipper fluke
-                        to go on account heave down clap of thunder.
+                       Easy-to-use appointment scheduling tool that helps you book and manage your healthcare appointments without the back-and-forth.
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />
@@ -233,10 +226,11 @@ export default function Features() {
                         />
                         </svg>
                     </div>
-                    <p className="mb-2 font-bold">Martial Arts</p>
+                    <p className="mb-2 font-bold">Simplifying Health Management with Intuitive Design</p>
                     <p className="text-sm leading-5 text-gray-900">
-                        Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr
-                        zimbra, mobly napster.
+                       Designed with the user in mind, our platform offers an intuitive, easy-to-navigate interface, making health management accessible to everyone, regardless of tech-savviness.
+
+
                     </p>
                     </div>
                     <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-[#0A7DCF] group-hover:scale-x-100" />

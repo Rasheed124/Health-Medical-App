@@ -50,17 +50,15 @@ export default function More() {
             </div>
             <div className="max-w-xl mb-6">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                Let us handle
+                Take Control of Your Health
                 <br className="hidden md:block" />
-                your next{' '}
+               Journey with {' '}
                 <span className="inline-block text-[#0A7DCF]">
-                destination
+               HealthConnect
                 </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
+                Join a community of proactive individuals who have revolutionised their healthcare experience. With HealthConnect, managing your health has never been easier. our platform is designed to empower you in your health journey. Simplify your healthcare management today and experience peace of mind like never before."
             </p>
             </div>
             <div>
