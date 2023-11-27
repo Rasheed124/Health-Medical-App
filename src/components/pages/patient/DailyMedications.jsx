@@ -16,20 +16,26 @@ export default function DailyMedications() {
   const [medications, setMedications] = useState([]);
   const token = sessionStorage.getItem("userToken");
   // console.log(token);
-  useEffect(() => {
-    axios
-      .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setMedications(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, [token]);
+
+    const fetchMedications = () => {
+      axios
+        .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setMedications(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    };
+
+    useEffect(() => {
+      fetchMedications();
+    }, [token]);
+  console.log(medications)
 
  
 
@@ -48,15 +54,21 @@ export default function DailyMedications() {
                     Name
                   </th>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Start Date
+                    Dozage
                   </th>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    End Date
+                    Frequency
+                  </th>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Description
+                  </th>
+                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Note
                   </th>
 
-                  <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                  {/* <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                     Action
-                  </th>
+                  </th> */}
                   <th className="px-4 py-2"></th>
                 </tr>
               </thead>
@@ -68,13 +80,19 @@ export default function DailyMedications() {
                       {medication.name}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {format(new Date(medication.startdate), "MM/dd/yyyy")}
+                      {medication.dosage}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {format(new Date(medication.enddate), "MM/dd/yyyy")}
+                      {medication.timefrequency}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                      {medication.description}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                      {medication.note}
                     </td>
 
-                    <td className="whitespace-nowrap px-4 space-x-2 py-2">
+                    {/* <td className="whitespace-nowrap px-4 space-x-2 py-2">
                       <div className="inline-flex gap-[5px] items-center">
                         <button className="text-[#1db9aa] flex mb-3 items-center font-medium text-[13px] bg-[#02b6b31f]  rounded-[5px] py-[4px] px-[8px]">
                           <FaEye />
@@ -86,7 +104,7 @@ export default function DailyMedications() {
                           <MdCancel />{" "}
                         </button>
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>
