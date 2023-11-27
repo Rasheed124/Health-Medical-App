@@ -114,7 +114,7 @@ const [isLoggedIn, setIsLoggedIn] = useState(true);
 
             <li>
               <Link
-                to={"/patient/medication"}
+                to={"/patient/medications"}
                 class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
               >
                 <FaPills className="text-xl" />

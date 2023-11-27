@@ -13,6 +13,7 @@ import Modal from "react-modal"; // Import the modal library
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
   export default function Medications() {
     const [medications, setMedications] = useState([]);
@@ -146,9 +147,11 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
                           <button className="text-[#1db9aa] flex mb-3 items-center font-medium text-[13px] bg-[#02b6b31f]  rounded-[5px] py-[4px] px-[8px]">
                             <FaEye />
                           </button>
-                          <button className="text-[#26af48] flex mb-3 items-center font-medium text-[13px] bg-[#0fb76b1f]  rounded-[5px] py-[4px] px-[8px]">
-                            <HiOutlinePencilSquare />
-                          </button>
+                          <Link to={`/medications/${medication._id}/edit`}>
+                            <button className="text-[#26af48] flex mb-3 items-center font-medium text-[13px] bg-[#0fb76b1f]  rounded-[5px] py-[4px] px-[8px]">
+                              <HiOutlinePencilSquare />
+                            </button>
+                          </Link>
                           <button
                             className="text-[#e63c3c] flex mb-3 items-center font-medium text-[13px] bg-[#f211361f]  rounded-[5px] py-[4px] px-[8px]"
                             onClick={() => handleDelete(medication._id)}
