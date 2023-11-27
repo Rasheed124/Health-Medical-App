@@ -68,33 +68,39 @@ export default function ProfileSetting() {
      
       <form onSubmit={handleUpdate} className=" max-w-[500px]">
        <div>
-        <div>
-          <img src="" alt="" />
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            {/* <input type="file" /> */}
+
+            <div className="relative">
+              <label htmlFor="Search" className="sr-only">
+                {" "}
+                Search{" "}
+              </label>
+
+              <input
+                type="file"
+                id="Search"
+                className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
+              />
+
+              <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
+                <button
+                  type="button"
+                  className="text-gray-600 hover:text-gray-700"
+                >
+                  <span className="sr-only">Search</span>
+
+                  <MdUpload />
+                </button>
+              </span>
+            </div>
+            <p>Allowed JPG, GIF or PNG, Max size of 2MB</p>
+          </div>
         </div>
-        <div>
-         {/* <input type="file" /> */}
-        
-     <div className="relative">
-         <label htmlFor="Search" className="sr-only"> Search </label>
-
-        <input
-          type="file"
-          id="Search"
-          className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
-        />
-
-          <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
-            <button type="button" className="text-gray-600 hover:text-gray-700">
-              <span className="sr-only">Search</span>
-
-          <MdUpload />
-            </button>
-          </span>
-      </div>
-         <p>Allowed JPG, GIF or PNG, Max size of 2MB</p>
-        </div>
-      </div>
-        <div className=" flex gap-4">
+        <div className=" flex max-[991px]:flex-wrap gap-4">
           <div className=" w-full">
             <label htmlFor="firstname">First Name</label> <br />
             <input
@@ -118,7 +124,7 @@ export default function ProfileSetting() {
             />
           </div>
         </div>
-        <div className=" flex gap-4 pt-5">
+        <div className=" flex  max-[991px]:flex-wrap gap-4 pt-5">
           <div className=" w-full">
             <label htmlFor="dateofbirth">Date Of Birth</label>
             <input
@@ -146,7 +152,7 @@ export default function ProfileSetting() {
             </select>
           </div>
         </div>
-        <div className=" flex gap-4 pt-5">
+        <div className=" flex  max-[991px]:flex-wrap gap-4 pt-5">
           <div className=" w-full">
             <label htmlFor="email">Email Id</label> <br />
             <input
@@ -184,7 +190,7 @@ export default function ProfileSetting() {
             className=" w-full border border-black pl-2 py-1 mt-2"
           />
         </div>
-        <div className=" flex gap-4 pt-5">
+        <div className=" flex  max-[991px]:flex-wrap gap-4 pt-5">
           <div className=" w-full">
             <label htmlFor="city">City</label> <br />
             <input
@@ -210,7 +216,7 @@ export default function ProfileSetting() {
             />
           </div>
         </div>
-        <div className=" flex gap-4 pt-5">
+        <div className=" flex  max-[991px]:flex-wrap gap-4 pt-5">
           <div className=" w-full">
             <label htmlFor="postcode">Post Code</label> <br />
             <input
@@ -243,5 +249,5 @@ export default function ProfileSetting() {
         </div>
       </form>
     </div>
-  )
+  );
 }

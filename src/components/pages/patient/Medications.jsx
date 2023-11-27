@@ -8,7 +8,6 @@ import { MdCancel } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 
 import { format } from "date-fns";
-import Modal from "react-modal"; // Import the modal library
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -22,40 +21,7 @@ import { Link } from "react-router-dom";
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [medicationToDelete, setMedicationToDelete] = useState(null);
 
-
-     const openModal = (medicationId) => {
-       setMedicationToDelete(medicationId);
-       setModalIsOpen(true);
-     };
-
-     // Function to handle closing the modal
-     const closeModal = () => {
-       setMedicationToDelete(null);
-       setModalIsOpen(false);
-     };
-
-     // Function to handle medication deletion
-    //  const handleDelete = (medicationId) => {
-    //    openModal(medicationId);
-    //  };
-
-
-    // console.log(token);
-    // useEffect(() => {
-    //   axios
-    //     .get("https://health-connect-cd7q.onrender.com/api/v1/medication", {
-    //       headers: {
-    //         Authorization: `Bearer ${token}`,
-    //       },
-    //     })
-    //     .then((response) => {
-    //       setMedications(response.data);
-
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching data:", error);
-    //     });
-    // }, [token]);
+ 
 
     const fetchMedications = () => {
       axios
@@ -78,37 +44,30 @@ import { Link } from "react-router-dom";
 
     // Function to handle medication deletion
     const handleDelete = (medicationId) => {
-          openModal(medicationId);
+      axios
+        .delete(
+          `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then(() => {
+          fetchMedications(); // Refresh medication list after deletion
+        })
+        .catch((error) => {
+          console.error("Error deleting medication:", error);
+        });
     };
-
-     const confirmDelete = () => {
-       axios
-         .delete(
-           `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationToDelete}`,
-           {
-             headers: {
-               Authorization: `Bearer ${token}`,
-             },
-           },
-         )
-         .then(() => {
-           closeModal();
-           fetchMedications();
-         })
-         .catch((error) => {
-           console.error("Error deleting medication:", error);
-         });
-     };
 
     return (
       <>
-        <div class="mx-auto max-w-screen-xl px-4  ">
-         
+        <div class="mx-auto max-w-screen-xl px-4  relative">
           <h3 className="py-5">Patient Appointment</h3>
 
-       
-          <div className="border-2 ">
-            <div className="overflow-x-auto">
+          <div className="border-2   ">
+            <div className="overflow-x-auto flex justify-end">
               <table className="min-w-full divide-y-2 text-center divide-gray-200 bg-white text-sm">
                 <thead className="text-left">
                   <tr>
@@ -164,44 +123,36 @@ import { Link } from "react-router-dom";
                   ))}
                 </tbody>
               </table>
+
+              {/* Modal Cofirmation */}
+              {modalIsOpen && (
+                <div className=" right-20 fixed top-24">
+                  <div className="rounded-lg bg-white p-8 shadow-2xl max-w-md mx-auto  ">
+                    <h2 className="text-lg font-bold">
+                      Are you sure you want to delete
+                    </h2>
+
+                    <div className="mt-4 flex gap-2">
+                      <button
+                        type="button"
+                        className="rounded bg-green-50 px-4 py-2 text-sm font-medium text-green-600"
+                      >
+                        Yes, I'm sure
+                      </button>
+
+                      <button
+                        type="button"
+                        className="rounded bg-gray-50 px-4 py-2 text-sm font-medium text-gray-600"
+                      >
+                        No, go back
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
-
-        {/* Modal */}
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Delete Medication Modal"
-          className="modal"
-          overlayClassName="modal-overlay"
-        >
-          <div className="rounded-lg bg-white p-8 shadow-2xl">
-            <h2 className="text-lg font-bold">
-              Are you sure you want to do that?
-            </h2>
-            <p className="mt-2 text-sm text-gray-500">
-              Doing that could have cause some issues elsewhere, are you 100%
-              sure it's OK?
-            </p>
-            <div className="mt-4 flex gap-2">
-              <button
-                type="button"
-                className="rounded bg-green-50 px-4 py-2 text-sm font-medium text-green-600"
-                onClick={confirmDelete}
-              >
-                Yes, I'm sure
-              </button>
-              <button
-                type="button"
-                className="rounded bg-gray-50 px-4 py-2 text-sm font-medium text-gray-600"
-                onClick={closeModal}
-              >
-                No, go back
-              </button>
-            </div>
-          </div>
-        </Modal>
       </>
     );
   };

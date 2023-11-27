@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
 import { FaApple, FaEye, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
+
+  
+  const navigate = useNavigate();
   // State variables for form fields
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,7 +30,6 @@ const Signup = () => {
       .then((response) => {
         // setMedications(response.data);
 
-        console.log(response);
 
         // Reset form fields
         setFirstName("");
@@ -35,6 +37,8 @@ const Signup = () => {
         setEmail("");
         setPassword("");
         setUserType("patient");
+
+           navigate("/sign-in");
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -49,9 +53,10 @@ const Signup = () => {
         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt="Night"
-            src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
+            src="https://img.freepik.com/premium-vector/flat-medical-insurance-people-concept-design-health-insurance-concept_123447-3848.jpg?w=740"
+            className="absolute inset-0 h-full w-full object-cover opacity-80 "
           />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
 
           <div className="hidden lg:relative lg:block lg:p-12">
             <a className="block text-white" href="/">
@@ -118,7 +123,7 @@ const Signup = () => {
                   name="first_name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  className="mt-1 p-2 w-full rounded-md border border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -136,7 +141,7 @@ const Signup = () => {
                   name="last_name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="mt-1 w-full p-2 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  className="mt-1 w-full p-2 rounded-md border border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -153,7 +158,7 @@ const Signup = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  className="mt-1 p-2 w-full rounded-md border border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -171,7 +176,7 @@ const Signup = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 w-full py-3 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  className="mt-1 w-full py-3 rounded-md border border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
 
@@ -185,7 +190,7 @@ const Signup = () => {
                 <select
                   id="UserType"
                   name="user_type"
-                  className="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  className="mt-1 p-2 w-full rounded-md border border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                   value={userType}
                   onChange={(e) => setUserType(e.target.value)}
                 >

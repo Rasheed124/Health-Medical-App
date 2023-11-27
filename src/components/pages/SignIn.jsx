@@ -45,16 +45,15 @@ const SignIn = () => {
   };
 
   return (
-  
-
     <section className="bg-white">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt="Night"
-            src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
+            src="https://img.freepik.com/premium-vector/flat-medical-insurance-people-concept-design-health-insurance-concept_123447-3848.jpg?w=740"
+            className="absolute inset-0 h-full w-full object-cover opacity-80 "
           />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
 
           <div className="hidden lg:relative lg:block lg:p-12">
             <a className="block text-white" href="/">
@@ -83,8 +82,8 @@ const SignIn = () => {
           </div>
         </section>
 
-        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-          <div className="max-w-xl lg:max-w-3xl">
+        <main className="flex items-center  px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+          <div className="max-w-xl w-full lg:max-w-xl">
             <div className="relative -mt-16 block lg:hidden">
               <a
                 className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-blue-600 sm:h-20 sm:w-20"
@@ -109,36 +108,30 @@ const SignIn = () => {
             >
               {/* ... (same as your existing form structure) */}
               {/* Add event handlers to update the state based on user input */}
-              <input
-                type="email"
-                required
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <input
-                type="password"
-                required
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="mb-4">
+                <label className="block text-sm mb-1 font-medium text-gray-700">
+                  Enter email
+                </label>
+                <input
+                  type="email"
+                  required
+                  className="w-full rounded-lg border border-gray-200 py-2 px-4 pe-12 text-sm shadow-sm"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700">
-                  Select User Type:
+                <label className="block text-sm mb-1 font-medium text-gray-700">
+                  Enter password
                 </label>
-                <select
-                  className="w-full mt-1 p-2 border rounded-md"
-                  // value={userType}
-                  // onChange={(e) => setUserType(e.target.value)}
-                >
-                  <option value="patient">Patient</option>
-                  <option value="doctor">Doctor</option>
-                </select>
+                <input
+                  type="password"
+                  required
+                  className="w-full rounded-lg border border-gray-200 py-2 px-4 pe-12 text-sm shadow-sm"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
 
               <div className="flex items-center justify-between">

@@ -13,30 +13,31 @@ import { IoPerson } from "react-icons/io5";
 import { IoMdShare } from "react-icons/io";
 import { TbPasswordUser } from "react-icons/tb";
 import { IoIosLogOut } from "react-icons/io";
-import {  signOut } from "firebase/auth";
+import { LiaPillsSolid } from "react-icons/lia";
+
+import { signOut } from "firebase/auth";
 
 import { auth } from "../../firebase";
 
 export default function DoctorSidebar() {
-
   const navigate = useNavigate();
 
-const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-const handleLogout = () => {
-  signOut(auth)
-    .then(() => {
-      // Successfully signed out
-      sessionStorage.removeItem("userType");
-      sessionStorage.removeItem("userToken");
-      setIsLoggedIn(false); // Update the state to reflect the logout
-      navigate("/");
-    })
-    .catch((error) => {
-      // Handle signout error
-      console.error("Error signing out:", error);
-    });
-};
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Successfully signed out
+        sessionStorage.removeItem("userType");
+        sessionStorage.removeItem("userToken");
+        setIsLoggedIn(false); // Update the state to reflect the logout
+        navigate("/");
+      })
+      .catch((error) => {
+        // Handle signout error
+        console.error("Error signing out:", error);
+      });
+  };
   return (
     <div className="flex flex-col justify-between border-e bg-white border border-gray-[#C1C1C1] h-full">
       <div className="pt-10">
@@ -77,16 +78,15 @@ const handleLogout = () => {
             </Link>
           </li>
 
-          {/* <li>
+          <li>
             <Link
-              to={"/patient"}
+              to={"/doctor/tracking-medication"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
-              <TbMessageCircle2Filled className="text-xl" />
-
-              <span class="text-sm font-medium"> Messages</span>
+              <LiaPillsSolid className="text-xl" />
+              <span class="text-sm font-medium"> Tracking Medication</span>
             </Link>
-          </li> */}
+          </li>
           <li>
             <Link
               to={"/doctor/profile-settings"}

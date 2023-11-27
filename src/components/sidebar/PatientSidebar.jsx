@@ -41,7 +41,7 @@ const [isLoggedIn, setIsLoggedIn] = useState(true);
       });
   };
     return (
-      <div className="flex flex-col justify-between border-e bg-white border border-gray-[#C1C1C1] h-full">
+      <div className="flex flex-col justify-between border-e bg-white border border-gray-[#C1C1C1] max-[991px]:h-auto h-full">
         <div className="pt-10">
           <div className="flex flex-col items-center">
             <img

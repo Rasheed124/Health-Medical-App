@@ -4,8 +4,7 @@ import { FaCheck, FaEye, FaTimes } from "react-icons/fa";
 import { GiPawHeart } from "react-icons/gi";
 import { RiPrinterFill } from "react-icons/ri";
 import { MdCancel } from "react-icons/md";
- import { HiOutlinePencilSquare } from "react-icons/hi2";
-
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 import { format } from "date-fns";
 
@@ -15,8 +14,11 @@ import axios from "axios";
 export default function DailyMedications() {
   const [medications, setMedications] = useState([]);
   const token = sessionStorage.getItem("userToken");
-  // console.log(token);
-  useEffect(() => {
+
+  // Use local state to keep track of the taken status for each medication
+  const [takenMedications, setTakenMedications] = useState({});
+
+  const fetchMedications = () => {
     axios
       .get("https://health-connect-cd7q.onrender.com/api/v1/medications", {
         headers: {
@@ -24,14 +26,64 @@ export default function DailyMedications() {
         },
       })
       .then((response) => {
+        // Initialize the takenMedications state based on the 'taken' property
+        const initialTakenMedications = {};
+        response.data.medications.forEach((medication) => {
+          initialTakenMedications[medication._id] = medication.taken || false;
+        });
+        setTakenMedications(initialTakenMedications);
+
         setMedications(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+  };
+
+const handleCheckboxChange = (medicationId) => {
+  const updatedTakenMedications = {
+    ...takenMedications,
+    [medicationId]: !takenMedications[medicationId],
+  };
+
+  setTakenMedications(updatedTakenMedications);
+
+  // Call a function to send the updated medication data to the endpoint
+  updateMedicationStatus(medicationId, updatedTakenMedications[medicationId]);
+};
+
+  const updateMedicationStatus = (medicationId, taken) => {
+    const updatedMedication = medications.medications.find(
+      (medication) => medication._id === medicationId,
+    );
+
+    // Update the 'taken' property based on the checkbox status
+    updatedMedication.taken = taken;
+
+    // Send the updated data to the endpoint
+    axios
+      .patch(
+        `https://health-connect-cd7q.onrender.com/api/v1/medications/${medicationId}`,
+        updatedMedication,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then((response) => {
+        // Handle the response if needed
+      })
+      .catch((error) => {
+        console.error("Error updating medication status:", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchMedications();
   }, [token]);
 
- 
+  console.log(medications);
 
   return (
     <>
@@ -48,15 +100,15 @@ export default function DailyMedications() {
                     Name
                   </th>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    Start Date
+                    Dozage
                   </th>
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                    End Date
+                    Frequency
                   </th>
-
                   <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                     Action
                   </th>
+
                   <th className="px-4 py-2"></th>
                 </tr>
               </thead>
@@ -68,13 +120,22 @@ export default function DailyMedications() {
                       {medication.name}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {format(new Date(medication.startdate), "MM/dd/yyyy")}
+                      {medication.dosage}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {format(new Date(medication.enddate), "MM/dd/yyyy")}
+                      {medication.timefrequency}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={takenMedications[medication._id] || false}
+                        onChange={() => handleCheckboxChange(medication._id)}
+                      />
                     </td>
 
-                    <td className="whitespace-nowrap px-4 space-x-2 py-2">
+                    {/* <td className="whitespace-nowrap px-4 space-x-2 py-2">
                       <div className="inline-flex gap-[5px] items-center">
                         <button className="text-[#1db9aa] flex mb-3 items-center font-medium text-[13px] bg-[#02b6b31f]  rounded-[5px] py-[4px] px-[8px]">
                           <FaEye />
@@ -86,7 +147,7 @@ export default function DailyMedications() {
                           <MdCancel />{" "}
                         </button>
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

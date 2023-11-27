@@ -196,7 +196,7 @@ export default function Home() {
                         alt="Person"
                       />
                       <div className="flex flex-col items-start justify-center">
-                        <p className="text-lg font-bold">Oliver Aguilerra</p>
+                        <p className="max-[991px]:text-sm text-lg font-bold">Oliver <br /> Aguilerra</p>
                         <p className="text-sm text-gray-800">Product Manager</p>
                       </div>
                     </div>
