@@ -80,7 +80,7 @@ export default function DoctorSidebar() {
 
           <li>
             <Link
-              to={"/doctor/tracking-medication"}
+              to={"/doctor"}
               class="flex items-center gap-2 rounded-lg py-4 px-3 text-gray-700"
             >
               <LiaPillsSolid className="text-xl" />
