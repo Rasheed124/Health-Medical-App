@@ -3,23 +3,24 @@ import { Routes, Route } from 'react-router-dom';
 import Patients from '../pages/doctors/Patients';
 import Appointment from '../pages/doctors/Appointment';
 import Home from '../pages/doctors/Home';
-import ProfileSetting from '../pages/doctors/ProfileSetting';
-import ChangePassword from '../pages/doctors/ChangePassword';
+import MedicalReport from '../pages/patient/MedicalReport';
 import ProfileSettings from '../pages/doctors/ProfileSettings';
+import ChangePassword from '../pages/doctors/ChangePassword';
 
 
 export default function DoctorControl() {
   return (
     <>
-       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/appointments" element={<Appointment />} />
-          <Route path="/patients" element={<Patients />} />
-          <Route path="/profile-setting" element={<ProfileSetting />} />
-          <Route path="/Change-password" element={<ChangePassword />} />
-          <Route path="/Profile-Settings" element={<ProfileSettings />} />
-       </Routes>
+    
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/appointments" element={<Appointment />} />
+        {/* <Route path="/patients" element={<Patients />} /> */}
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/profile-settings" element={<ProfileSettings />} />
+        <Route path="/medical-report" element={<MedicalReport />} />
+     
+      </Routes>
     </>
-
-  )
+  );
 }

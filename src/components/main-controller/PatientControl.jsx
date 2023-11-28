@@ -3,24 +3,33 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/patient/Home';
 import ProfileSetting from '../pages/patient/ProfileSetting';
 import BookAppointment from '../pages/patient/BookAppointment';
+import Medications from '../pages/patient/Medications';
+import MedicalReport from '../pages/patient/MedicalReport';
 import ChangePassword from '../pages/patient/ChangePassword';
-import MedicalDetails from '../pages/patient/MedicalDetails';
 import CreateMedication from '../pages/patient/CreateMedication';
+import DailyMedications from '../pages/patient/DailyMedications';
 
 
 
 export default function PatientControl() {
   return (
     <>
-       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Profile-setting" element={<ProfileSetting />} />
-          <Route path="/book-an-appointment" element={<BookAppointment />} />
-           <Route path="/medical-details" element={<MedicalDetails />} />
-            <Route path="/Change-password" element={<ChangePassword />} />
-             <Route path="/Create-medication" element={<CreateMedication />} />
-       </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile-settings" element={<ProfileSetting />} />
+        <Route path="/book-an-appointment" element={<BookAppointment />} />
+        <Route path="/medication" element={<Medications />} />
+        <Route path="/medical-report" element={<MedicalReport />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route
+          path="/create-medication"
+          element={<CreateMedication />}
+        />
+        <Route
+          path="/daily-medication"
+          element={<DailyMedications />}
+        />
+      </Routes>
     </>
-
-  )
+  );
 }
