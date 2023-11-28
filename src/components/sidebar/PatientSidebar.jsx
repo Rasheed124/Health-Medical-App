@@ -18,7 +18,7 @@ import { signOut } from "firebase/auth";
 
 import { auth } from "../../firebase";
 import { useState } from "react";
-
+import health9 from '../../../src/assets/health9.jpg'
 
 
 export default function PatientSidebar() {
@@ -45,8 +45,8 @@ const [isLoggedIn, setIsLoggedIn] = useState(true);
         <div className="pt-10">
           <div className="flex flex-col items-center">
             <img
-              className="object-cover w-20 h-20 mb-3 rounded-full shadow"
-              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+              className="object-cover w-20 h-20   mb-3 rounded-full shadow"
+              src={health9}
               alt="Person"
             />
             <div className="flex flex-col items-center space-y-0.5">
